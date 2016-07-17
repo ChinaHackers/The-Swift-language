@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // ============================
         
         // 初始化UItableView, 并设置其位置尺寸\样式
-        table = UITableView(frame: self.view.frame, style: UITableViewStyle.Grouped)
+        table = UITableView(frame: self.view.frame, style: UITableViewStyle.grouped)
         
         
         //UItableView 数据数组集合
@@ -58,27 +58,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
 
          // 创建一个字符串,作为单元格的重用标识符
-        self.table!.registerClass(MyTableViewCell.self, forCellReuseIdentifier: "tableCell")
+        self.table!.register(MyTableViewCell.self, forCellReuseIdentifier: "tableCell")
        
         //创建表头标签
-        let headerLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, 30))
-        headerLabel.backgroundColor = UIColor.purpleColor()
-        headerLabel.textColor = UIColor.whiteColor()
+        let headerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 30))
+        headerLabel.backgroundColor = UIColor.purple()
+        headerLabel.textColor = UIColor.white()
         headerLabel.numberOfLines = 0
-        headerLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        headerLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         headerLabel.text = "常见 UIKit 控件"
-        headerLabel.font = UIFont.italicSystemFontOfSize(17)
+        headerLabel.font = UIFont.italicSystemFont(ofSize: 17)
     
         // 添加 空间到当前视图控制器上
         self.table.tableHeaderView = headerLabel
         self.view.addSubview(self.table!)
         
         //监听键盘弹出通知
-        NSNotificationCenter.defaultCenter() .addObserver(self,selector: #selector(ViewController.keyboardWillShow(_:)),
-                         name: UIKeyboardWillShowNotification, object: nil)
+        NotificationCenter.default .addObserver(self,selector: #selector(ViewController.keyboardWillShow(_:)),
+                         name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         //监听键盘隐藏通知
-        NSNotificationCenter.defaultCenter() .addObserver(self,selector: #selector(ViewController.keyboardWillHide(_:)),
-                         name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default .addObserver(self,selector: #selector(ViewController.keyboardWillHide(_:)),
+                         name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         //绑定对长按的响应
         let longPress =  UILongPressGestureRecognizer(target:self, action:#selector(ViewController.tableviewCellLongPressed(_:)))
@@ -97,10 +97,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
  
     
     //导航栏编辑按钮点击事件
-    @IBAction func editBtnClick(sender: UIBarButtonItem) {
+    @IBAction func editBtnClick(_ sender: UIBarButtonItem) {
         
         //在正常状态和编辑状态之间切换
-        if(self.table.editing == false){
+        if(self.table.isEditing == false){
             
             self.table.setEditing(true, animated:true)
             sender.title = "保存"
@@ -119,14 +119,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK -  有多少组数据
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
     // MARK -  每-组有多少行
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // 数组的长度作为表格视图的行数
         return dataArray.count
@@ -137,19 +137,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK - 每一行显示的具体内容
     
     // 初始化或复用表格视图中的单元格
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath)  as! MyTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)  as! MyTableViewCell
         
         
         //设置单元格内容
-        let item = dataArray[indexPath.row]
+        let item = dataArray[(indexPath as NSIndexPath).row]
         
          // 单元格数据 
         cell.listItem = item
         
         //内容标签是否可编辑
-        cell.labelEditable = tableView.editing
+        cell.labelEditable = tableView.isEditing
 
         
         // 设置标识符
@@ -170,11 +170,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          */
        
         // cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        cell.accessoryType = UITableViewCellAccessoryType.DetailDisclosureButton
+        cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
       
         // 设置 cell 被选中时的背景
         let aw = UIView(frame: cell.frame)
-        aw.backgroundColor = UIColor.orangeColor()
+        aw.backgroundColor = UIColor.orange()
         cell.selectedBackgroundView = aw
         
         // MARK: - 开启编辑模式进行多选操作, 即cell  √ 打钩选择
@@ -193,9 +193,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK -  UITableView Delegate
     
     // 处理列表项的选中事件
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.table.deselectRowAtIndexPath(indexPath, animated: true)
+        self.table.deselectRow(at: indexPath, animated: true)
    
     }
   
@@ -211,7 +211,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: -  设置单元格的编辑模式为 删除模式
     //即Cell中显示 (删除按钮) 或 (添加按钮)
     
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         
         //在点击右上角的按钮后，每个Cell中显示的按钮如下
         /*
@@ -224,16 +224,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          增加：UITableViewCellEditingStyleInsert
          */
  
-            if(indexPath.section == 1) {
+            if((indexPath as NSIndexPath).section == 1) {
                 
-                return UITableViewCellEditingStyle.None
+                return UITableViewCellEditingStyle.none
             }
-            return UITableViewCellEditingStyle.Delete
+            return UITableViewCellEditingStyle.delete
        
     }
     
     // 设置删除按钮文字
-    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath)
         -> String? {
             return "删除"
     }
@@ -243,17 +243,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 响应单元格的删除事件：点击当点击delete后执行的删除过程
     // 注意：先除数据源里的数据，删除tableView中对应的行
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         // 如果编辑模式为删除,执行后面的方法
-        if editingStyle == UITableViewCellEditingStyle.Delete {
+        if editingStyle == UITableViewCellEditingStyle.delete {
             
             
             // 获取待删除的单元格, 在段落中的行数.
-            let rowNum = indexPath.row
+            let rowNum = (indexPath as NSIndexPath).row
             
             // 从数组中将该单元格的内容清除, 以保证 单元格的一致性
-            dataArray.removeAtIndex(rowNum)
+            dataArray.remove(at: rowNum)
             
             // 简写:
            // dataArray.removeAtIndex(indexPath.row)
@@ -263,40 +263,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         // 然后删除单元格在表格中对应的行
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         
     }
  
  
     //MARK: -  设置单元格是否允许拖动\换行.
     
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
    
     //MARK: - 响应单元格的移动事件
-    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
         
         
         
         if fromIndexPath != toIndexPath {
         
             //获取移动行对应的值
-            let itemValue:ListItem = dataArray[fromIndexPath.row]
+            let itemValue:ListItem = dataArray[(fromIndexPath as NSIndexPath).row]
             
             //删除移动的值
-            dataArray.removeAtIndex(fromIndexPath.row)
+            dataArray.remove(at: (fromIndexPath as NSIndexPath).row)
             
             //如果移动区域大于现有行数，直接在最后添加移动的值
             
-            if toIndexPath.row > dataArray.count{
+            if (toIndexPath as NSIndexPath).row > dataArray.count{
             
                 dataArray.append(itemValue)
             
             }else{
             
                 //没有超过最大行数，则在目标位置插入一份删除的对象, 已同步数据源, 保证数据与界面的一致性.
-                dataArray.insert(itemValue, atIndex:toIndexPath.row)
+                dataArray.insert(itemValue, at:(toIndexPath as NSIndexPath).row)
             }
         }
     }
@@ -304,14 +304,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - 长按表格
     
-    func tableviewCellLongPressed(gestureRecognizer:UILongPressGestureRecognizer) {
+    func tableviewCellLongPressed(_ gestureRecognizer:UILongPressGestureRecognizer) {
         
-        if (gestureRecognizer.state == UIGestureRecognizerState.Ended) {
+        if (gestureRecognizer.state == UIGestureRecognizerState.ended) {
             
             print("UIGestureRecognizerState, 手势识别器状态结束了")
             
             //在正常状态和编辑状态之间切换
-            if(table.editing == false) {
+            if(table.isEditing == false) {
                 
                 self.table.setEditing(true, animated:true)
                 
@@ -327,16 +327,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - Keyboard
     
     // 键盘显示
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         
-        let userInfo = notification.userInfo!
+        let userInfo = (notification as NSNotification).userInfo!
         
         //键盘尺寸
-        let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue()
         var contentInsets:UIEdgeInsets
         
         //判断是横屏还是竖屏
-        let statusBarOrientation = UIApplication.sharedApplication().statusBarOrientation
+        let statusBarOrientation = UIApplication.shared().statusBarOrientation
         
         if UIInterfaceOrientationIsPortrait(statusBarOrientation) {
         
@@ -353,7 +353,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // 键盘隐藏
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: Notification) {
         
         //还原tableview的contentview大小
         let contentInsets:UIEdgeInsets = UIEdgeInsetsMake(64.0, 0.0, 0, 0.0);
@@ -364,11 +364,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     //MARK: - 页面移除时
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
         //取消键盘监听通知
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     

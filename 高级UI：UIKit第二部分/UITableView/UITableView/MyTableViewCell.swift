@@ -49,7 +49,7 @@ class MyTableViewCell: UITableViewCell, UITextFieldDelegate {
         didSet {
           //  label.userInteractionEnabled = true
             
-            label.userInteractionEnabled = labelEditable!
+            label.isUserInteractionEnabled = labelEditable!
             
             // 如果可以编辑的话, 加大左边距 (因为左边有个删除按钮)
             leftMargin = labelEditable! ? 45.0 : 15.0
@@ -66,8 +66,8 @@ class MyTableViewCell: UITableViewCell, UITextFieldDelegate {
         
         // 初始化文本标签
         label = UITextField(frame: CGRect.null)
-        label.textColor = UIColor.blackColor()
-        label.font = UIFont.systemFontOfSize(16)
+        label.textColor = UIColor.black()
+        label.font = UIFont.systemFont(ofSize: 16)
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -75,7 +75,7 @@ class MyTableViewCell: UITableViewCell, UITextFieldDelegate {
         label.delegate = self
         
         // 标签文本垂直对齐方式: 垂直居中
-        label.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+        label.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         
         // 添加文本标签
         addSubview(label)
@@ -92,7 +92,7 @@ class MyTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     // 键盘回车
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
         
@@ -100,7 +100,7 @@ class MyTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     // 结束编辑
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
         if listItem != nil {
             
