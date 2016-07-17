@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+		<string>分段控件 UIPageControl</string>
+		<string>标签条 UITabBar</string>
+		<string>网格 UICollectionView</string>
+		<string>导航条 UINavigationBar</string>
+		<string>搜索条 UISearchBar</string>
+		<string>表格视图 UITableView</string>
+		<string>工具条 UIToolbar</string>
+		<string>网页控件 UIWebView</string>
+		<string>微调器 UIStepper</string>
+		<string>日期选择器 UIDatePiker</string>
+		<string>警告框 UIAlertView</string>
+		<string>滑动条 UISlider</string>
+		<string>进度条 UIProgressView</string>
+		<string>图像 UIImageView</string>
+		<string>开关按钮 UISwitch</string>
+		<string>按钮 UIButton</string>
+		<string>文本框 UITextField</string>
+		<string>标签 UILabel</string>
+</array>
+</plist>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:UIScrollViewDemo3/UIScrollViewDemo3.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UISliderDemo/UISliderDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UISegmentedControlDemo/UISegmentedControlDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIAlerViewAnimation/UIAlerViewAnimation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIActionSheet/UIActionSheet.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIScrollViewDemo/UIScrollViewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIScrollView/UIScrollView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIStepper/UIStepper.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIImageViewDemo/UIImageViewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIAlertViewDemo2/UIAlertViewDemo2.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIAlertViewDemo/UIAlertViewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UISwitchDemo/UISwitchDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIPickerView/UIPickerView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIAlertView/UIAlertView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UISlider/UISlider.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIProgressView/UIProgressView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIImageView/UIImageView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UISegmentedControl/UISegmentedControl.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UISwitch/UISwitch.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UITextField/UITextField.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UITextView/UITextView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIButton/UIButton.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UILabel/UILabel.xcodeproj">
+   </FileRef>
+</Workspace>
