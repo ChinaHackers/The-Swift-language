@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='构造过程'/>
+        <page name='自定义构造过程'/>
+        <page name='默认构造器'/>
+        <page name='值类型的构造器代理'/>
+        <page name='类的继承和构造过程'/>
+        <page name='可失败构造器'/>
+        <page name='必要构造器'/>
+        <page name='通过闭包或函数设置属性的默认值'/>
+    </pages>
+</playground>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='类型转换'/>
+        <page name='为类型转换定义类层次'/>
+        <page name='类型检查'/>
+        <page name='向下类型转换'/>
+        <page name='Any 和 AnyObject 的类型转换'/>
+        <page name='AnyObject'/>
+        <page name='Any'/>
+    </pages>
+</playground>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='协议'/>
+        <page name='协议的语法'/>
+        <page name='属性要求'/>
+        <page name='方法要求'/>
+        <page name='异变方法要求'/>
+        <page name='初始化器要求'/>
+        <page name='将协议作为类型'/>
+        <page name='委托'/>
+        <page name='在扩展里添加协议遵循'/>
+        <page name='协议类型的集合'/>
+        <page name='协议继承'/>
+        <page name='类专用的协议'/>
+        <page name='协议组合'/>
+        <page name='协议遵循的检查'/>
+        <page name='可选协议要求'/>
+        <page name='协议扩展'/>
+    </pages>
+</playground>

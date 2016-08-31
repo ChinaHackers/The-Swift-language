@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='闭包'/>
+        <page name='闭包表达式'/>
+        <page name='尾随闭包'/>
+        <page name='值捕获'/>
+        <page name='闭包是引用类型'/>
+        <page name='非逃逸闭包'/>
+        <page name='自动闭包'/>
+    </pages>
+</playground>

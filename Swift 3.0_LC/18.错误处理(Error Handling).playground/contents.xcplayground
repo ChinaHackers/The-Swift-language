@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='错误处理'/>
+        <page name='表示和抛出错误'/>
+        <page name='处理错误'/>
+        <page name='使用抛出函数传递错误'/>
+        <page name='使用 Do-Catch 处理错误'/>
+        <page name='转换错误为可选项'/>
+        <page name='取消错误传递'/>
+        <page name='指定清理操作'/>
+    </pages>
+</playground>

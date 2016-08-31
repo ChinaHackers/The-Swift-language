@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='自动引用计数'/>
+        <page name='自动引用计数的工作机制'/>
+        <page name='自动引用计数实践'/>
+        <page name='类实例之间的循环强引用'/>
+        <page name='解决实例之间的循环强引用'/>
+        <page name='闭包引起的循环强引用'/>
+        <page name='解决闭包引起的循环强引用'/>
+    </pages>
+</playground>

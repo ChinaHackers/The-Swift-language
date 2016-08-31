@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='泛型'/>
+        <page name='泛型所解决的问题'/>
+        <page name='泛型函数'/>
+        <page name='类型参数'/>
+        <page name='命名类型参数'/>
+        <page name='泛型类型'/>
+        <page name='扩展泛型类型'/>
+        <page name='类型约束'/>
+        <page name='关联类型'/>
+        <page name='Where 子句'/>
+    </pages>
+</playground>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='字符串和字符'/>
+        <page name='字符串字面量'/>
+        <page name='初始化空字符串'/>
+        <page name='字符串可变性'/>
+        <page name='字符串是值类型'/>
+        <page name='使用字符'/>
+        <page name='连接字符串和字符'/>
+        <page name='字符串插值'/>
+        <page name='计算字符数量'/>
+        <page name='访问和修改字符串'/>
+        <page name='比较字符串'/>
+        <page name='字符串的 Unicode 表示形式'/>
+        <page name='Unicode'/>
+    </pages>
+</playground>

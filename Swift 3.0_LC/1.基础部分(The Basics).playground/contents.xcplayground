@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='基础部分'/>
+        <page name='常量和变量'/>
+        <page name='注释'/>
+        <page name='分号'/>
+        <page name='整数'/>
+        <page name='浮点数'/>
+        <page name='类型安全和类型推断'/>
+        <page name='数值型字面量'/>
+        <page name='数值类型转换'/>
+        <page name='类型别名'/>
+        <page name='布尔值'/>
+        <page name='元组'/>
+        <page name='可选类型'/>
+        <page name='错误处理'/>
+        <page name='断言'/>
+    </pages>
+</playground>

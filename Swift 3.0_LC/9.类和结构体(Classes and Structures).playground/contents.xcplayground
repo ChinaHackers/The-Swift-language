@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='类和结构体'/>
+        <page name='类和结构体对比'/>
+        <page name='结构体和枚举是值类型'/>
+        <page name='类是引用类型'/>
+        <page name='类和结构体的选择'/>
+        <page name='字符串\数组\字典类型的赋值与复制行为'/>
+    </pages>
+</playground>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='属性'/>
+        <page name='存储属性'/>
+        <page name='计算属性'/>
+        <page name='属性观察者'/>
+        <page name='全局变量和局部变量'/>
+        <page name='类型属性'/>
+    </pages>
+</playground>
