@@ -4,6 +4,8 @@ Swift 结合了 C 和 Objective-C 的优点并且不受 C 兼容性的限制。
 Swift 在 Mac OS 和 iOS 平台可以和 Object-C 使用相同的运行环境。
 2015年6月8日，苹果于WWDC 2015上宣布，Swift将开放源代码，包括编译器和标准库。
 
+随着WWDC 2016的召开，苹果正式发布了雨燕3.0预览版1，这是苹果Swift3语言的首个稳定开发者预览版。苹果在其Swift.org官方博客中称，第一个预览版版本比代码库中打包的快照版本稳定很多。
+
 ##My swift syntax summary!
 
 
