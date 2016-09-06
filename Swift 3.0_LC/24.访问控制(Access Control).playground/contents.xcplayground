@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='raw'>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
     <pages>
         <page name='访问控制'/>
         <page name='模块和源文件'/>
         <page name='访问级别'/>
-        <page name='Untitled Page 4'/>
-        <page name='Untitled Page 5'/>
-        <page name='Untitled Page 6'/>
-        <page name='Untitled Page 7'/>
-        <page name='Untitled Page 8'/>
-        <page name='Untitled Page 9'/>
+        <page name='访问控制语法'/>
+        <page name='自定义类型'/>
+        <page name='子类'/>
+        <page name='常量、变量、属性、下标'/>
+        <page name='构造器'/>
+        <page name='协议'/>
+        <page name='扩展'/>
+        <page name='泛型'/>
+        <page name='类型别名'/>
     </pages>
 </playground>
