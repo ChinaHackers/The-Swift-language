@@ -1,6 +1,9 @@
 
-![image](http://ww1.sinaimg.cn/large/c3a20316gw1f7kqau6f8hj20b0064t8n.jpg)
+![image](http://ww2.sinaimg.cn/large/c3a20316gw1f7krffy096j20m80dwgoh.jpg)
 
+![image](https://api.travis-ci.org/AFNetworking/AFNetworking.svg)
+[![Swift compatible](https://img.shields.io/badge/swift-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 2.2&3.0](https://img.shields.io/badge/Swift-2.2%20&%203.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 ##Swift 是一种支持多编程范式和编译式的开源编程语言,苹果于2014年WWDC（苹果开发者大会）发布，用于开发 iOS，OS X 和 watchOS 应用程序。
 Swift 结合了 C 和 Objective-C 的优点并且不受 C 兼容性的限制。
 Swift 在 Mac OS 和 iOS 平台可以和 Object-C 使用相同的运行环境。
@@ -10,8 +13,6 @@ Swift 在 Mac OS 和 iOS 平台可以和 Object-C 使用相同的运行环境。
 
 ##My swift syntax summary!
 
-
-[![Swift 2.2&3.0](https://img.shields.io/badge/Swift-2.2%20&%203.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 # Contact
 ![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)
