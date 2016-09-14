@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     // 创建进度条
     // 实例化 UIProgressView 类可以创建一个进度条，在实例化时参数 progressViewStyle.Defailt 指定进度条风格为默认风格
-    let progressView = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
+    let progressView = UIProgressView(progressViewStyle: UIProgressViewStyle.bar)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,27 +31,27 @@ class ViewController: UIViewController {
         
         // 改变进度条的颜色
         // progressTintColor 属性: 设置已有的进度的颜色
-        progressView.progressTintColor = UIColor.whiteColor()
+        progressView.progressTintColor = UIColor.white
         
         // trackTintColor 属性: 设置剩余的进度的颜色
-        progressView.trackTintColor = UIColor.grayColor()
+        progressView.trackTintColor = UIColor.gray
         
         // 设置背景色为黑色
-        self.view.backgroundColor = UIColor.blackColor()
+        self.view.backgroundColor = UIColor.black
         
         // 先归零
         progressView.progress = 0
         
         // 用 NSTimer 计时器 更新 progress 进度
         // 1秒更新一次, 更新方法, 一直循环
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.update(_:)), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.update(_:)), userInfo: nil, repeats: true)
     
         self.view.addSubview(progressView)
         
     }
 
     
-    func update(sender: NSTimer) {
+    func update(_ sender: Timer) {
         
         progressView.progress += 0.1
         

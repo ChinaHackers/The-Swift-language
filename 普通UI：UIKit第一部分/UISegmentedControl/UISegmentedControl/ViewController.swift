@@ -16,25 +16,25 @@ class ViewController: UIViewController {
     
       /******  根据UISegmentedControl被选中的索引,变换背景颜色 ******/
     
-    @IBAction func segmentChanged(sender: UISegmentedControl) {
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         
         // 根据UISegmentedControl被选中的索引
         switch (sender.selectedSegmentIndex) {
         case 0:
             // 将应用背景设为红色
-            self.view.backgroundColor = UIColor.redColor()
+            self.view.backgroundColor = UIColor.red
             break
         case 1:
             // 将应用背景设为绿色
-            self.view.backgroundColor = UIColor.greenColor()
+            self.view.backgroundColor = UIColor.green
             break
         case 2:
             // 将应用背景设为橙色
-            self.view.backgroundColor = UIColor.orangeColor()
+            self.view.backgroundColor = UIColor.orange
             break
         case 3:
             // 将应用背景设为紫色
-            self.view.backgroundColor = UIColor.purpleColor()
+            self.view.backgroundColor = UIColor.purple
             break
         default:
             print("---------")

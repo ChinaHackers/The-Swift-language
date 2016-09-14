@@ -45,11 +45,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     //  并要在委托类中实现 viewForZoomingInScrollView 方法 才能实现缩放
     
     // 因为 viewForZoomingInScrollView 返回值 为 UIImageView 类型，因此这里进行缩放操作 就是图片的缩放
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
         for subview: AnyObject in scrollView.subviews {
             
-            if subview.isKindOfClass(UIImageView) {
+            if subview.isKind(of: UIImageView) {
                 
                 return subview as? UIView
             }

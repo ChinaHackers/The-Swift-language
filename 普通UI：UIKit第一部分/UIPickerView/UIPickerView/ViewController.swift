@@ -8,26 +8,25 @@
 
 import UIKit
 
-// 遵守 UIPickerView 的代理\数据源协议
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var pickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         
         // 选择框（UIPickerView）
         // 选择框（UIPickerView）可以让用户以滑动的方式选择值
-        // 1. 建立选择框
+// 1. 建立选择框
+        
         pickerView = UIPickerView()
         
-        // 设置 pickerView 的代理\数据源协议为 当前视图控制器类
+        // 将 dataSource 设置成自己
         pickerView.dataSource = self
+        
+        // 将 delegate 设置成自己
         pickerView.delegate = self
-        
-        // 2. 调整选择框的尺寸
-        // UIPickerView用 frame、center 俩个属性，设置整个选择框的大小、位置
-        
         
         //设置选择框的默认值
         pickerView.selectRow(1, inComponent: 0, animated: true)
@@ -40,7 +39,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // 建立一个按钮，触摸按钮时，获得选择框被选择的索引
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
         button.center = self.view.center
-        button.backgroundColor = UIColor.blue()
+        button.backgroundColor = UIColor.blue
         button.setTitle("获取信息", for: UIControlState())
         button.addTarget(self, action: #selector(ViewController.getPickerViewValue), for: UIControlEvents.touchUpInside)
         
@@ -49,22 +48,22 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
 
-    //: MARK: - UIPicker View DataSource
+    // 设置选择框的列数为3，继承于UIPickerViewDataSource 协议
     
-    // 设置选择框的列数为3
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
 
         return 3
     }
 
-    // 设置选择框的行数为9.
+    
+    // 设置选择框的行数为9.继承于UIPickerViewDataSource 协议
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return 9
     }
     
-    //: MARK: - UIPicker View Delegate
-    // 设置选择框各选项的内容
+    // 设置选择框各选项的内容，继承于UIPickerViewDelegate 协议
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
         return String (row) + "-" + String (component)
@@ -74,18 +73,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func getPickerViewValue() {
         
-        let message = String(pickerView.selectedRow(inComponent: 0)) + "-" + String(pickerView.selectedRow(inComponent: 1)) + "-" + String(pickerView.selectedRow(inComponent: 2))
+        let alertView = UIAlertView()
+        alertView.title = "被选中的索引为"
         
+        alertView.message = String(pickerView.selectedRow(inComponent: 0)) + "-" + String(pickerView.selectedRow(inComponent: 1)) + "-" + String(pickerView.selectedRow(inComponent: 2))
         
-        let alertView = UIAlertController(title: "被选中的索引为", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-        alertView.addAction(okAction)
+        alertView.addButton(withTitle: "OK")
         
-        self.present(alertView, animated: true, completion: nil)
-       
+        alertView.show()
+        
         
     }
     
+//    2. 调整选择框的尺寸
+//    UIPickerView用 frame、center 俩个属性，设置整个选择框的大小、位置
     
     
     override func didReceiveMemoryWarning() {

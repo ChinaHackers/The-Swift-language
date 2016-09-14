@@ -36,9 +36,9 @@ class ViewController: UIViewController {
         
         //为了让内容横向滚动，横向内容宽度为 3个页面的宽度总和
         
-        scrollView.contentSize = CGSizeMake(CGFloat(pagesWidth*numOfPages), CGFloat(CGFloat(pagesHight)))
+        scrollView.contentSize = CGSize(width: CGFloat(pagesWidth*numOfPages), height: CGFloat(CGFloat(pagesHight)))
         
-        scrollView.pagingEnabled = true
+        scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator =  false
         
         scrollView.showsVerticalScrollIndicator = false

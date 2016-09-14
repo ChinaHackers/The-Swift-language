@@ -16,13 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6B36E1541D09F6F400F7C758 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6B36E1501D09F6F400F7C758 /* UIScrollViewDemo3.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6B36E1221D09DE6300F7C758;
-			remoteInfo = UIScrollViewDemo3;
-		};
 		6B743A131B5CD2F800FD64B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6B7439F51B5CD2F700FD64B1 /* Project object */;
@@ -33,7 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B36E1501D09F6F400F7C758 /* UIScrollViewDemo3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIScrollViewDemo3.xcodeproj; path = ../../../../../../UIScrollViewDemo3/UIScrollViewDemo3.xcodeproj; sourceTree = "<group>"; };
 		6B7439FD1B5CD2F700FD64B1 /* UILabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UILabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B743A011B5CD2F700FD64B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B743A021B5CD2F700FD64B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,18 +56,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B36E1511D09F6F400F7C758 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6B36E1551D09F6F400F7C758 /* UIScrollViewDemo3.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6B7439F41B5CD2F700FD64B1 = {
 			isa = PBXGroup;
 			children = (
-				6B36E1501D09F6F400F7C758 /* UIScrollViewDemo3.xcodeproj */,
 				6B7439FF1B5CD2F700FD64B1 /* UILabel */,
 				6B743A151B5CD2F800FD64B1 /* UILabelTests */,
 				6B7439FE1B5CD2F700FD64B1 /* Products */,
@@ -174,14 +157,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = LC;
 				TargetAttributes = {
 					6B7439FC1B5CD2F700FD64B1 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					6B743A111B5CD2F800FD64B1 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6B7439FC1B5CD2F700FD64B1;
 					};
 				};
@@ -197,12 +182,6 @@
 			mainGroup = 6B7439F41B5CD2F700FD64B1;
 			productRefGroup = 6B7439FE1B5CD2F700FD64B1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6B36E1511D09F6F400F7C758 /* Products */;
-					ProjectRef = 6B36E1501D09F6F400F7C758 /* UIScrollViewDemo3.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6B7439FC1B5CD2F700FD64B1 /* UILabel */,
@@ -210,16 +189,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6B36E1551D09F6F400F7C758 /* UIScrollViewDemo3.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = UIScrollViewDemo3.app;
-			remoteRef = 6B36E1541D09F6F400F7C758 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6B7439FB1B5CD2F700FD64B1 /* Resources */ = {
@@ -302,8 +271,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -347,8 +318,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -367,6 +340,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -381,6 +355,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LC.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -394,6 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LC.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -413,6 +389,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LC.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UILabel.app/UILabel";
 			};
 			name = Debug;
@@ -429,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LC.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UILabel.app/UILabel";
 			};
 			name = Release;

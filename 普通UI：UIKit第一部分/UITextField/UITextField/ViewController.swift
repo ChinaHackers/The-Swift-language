@@ -16,10 +16,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //文本框（UITextField）
         
         //1.文本框的创建
-        let textField = UITextField(frame: CGRectMake(10, 160, 200, 30))
+        let textField = UITextField(frame: CGRect(x: 10, y: 160, width: 200, height: 30))
         
         //设置边框样式为圆角矩形
-        textField.borderStyle = UITextBorderStyle.RoundedRect
+        textField.borderStyle = UITextBorderStyle.roundedRect
 /*
         borderStyle 属性值可以为：
         
@@ -58,7 +58,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         textField.textAlignment = NStextAlignment.Center ->居中对齐
         textField.textAlignment = NSTextAlignment.Right ->右对齐
        */
-         textField.textAlignment = NSTextAlignment.Left
+         textField.textAlignment = NSTextAlignment.left
         
         /*
         //垂直对齐：contentVerticalAlignment
@@ -70,7 +70,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         */
  
         // 因为contentVerticalAlignment 是个结构体，所以可以省略。符号前面有个空格
-        textField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+        textField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
    
         // 3.键盘设置
         // 设置文本框的 returnKeyType 属性来设置return 的样式
@@ -86,7 +86,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
          */
         
          // 此时键盘的return 键盘为 Done 样式，暗示用户，点击return键后，完成输入
-        textField.returnKeyType = UIReturnKeyType.Done
+        textField.returnKeyType = UIReturnKeyType.done
         
             
         // 4.清除按钮
@@ -97,14 +97,14 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //  UITextFieldViewMode.UnlessEditing   : 编辑时，不出现清除按钮，完成编辑后才出现清除按钮
         // UITextFieldViewMode.Always           : 一直都显示清除按钮
         
-        textField.clearButtonMode = UITextFieldViewMode.WhileEditing
+        textField.clearButtonMode = UITextFieldViewMode.whileEditing
         
         
         // 5.背景设置
         // textField.background = UIImage(named:"background")
         
         // 设置 texeField 的光标颜色
-        textField.tintColor = UIColor.orangeColor()
+        textField.tintColor = UIColor.orange
         
         
         textField.delegate = self
@@ -113,7 +113,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
     }
     
-    func textFieldShouldReturn(textField:UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
         //收起键盘
         textField.resignFirstResponder()
         

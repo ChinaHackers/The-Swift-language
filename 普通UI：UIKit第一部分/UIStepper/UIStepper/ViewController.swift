@@ -41,17 +41,17 @@ class ViewController: UIViewController {
         stepper.stepValue = 1
         
         // continuous属性为true，表示可以按住不放来连续更改值
-        stepper.continuous = true
+        stepper.isContinuous = true
         
         // wraps属性设置stepper是否循环（当到最大值时，再点击加号来增加数值，将又从最小值开始）
         stepper.wraps = true
         
         // 监听 UIControlEvents.ValueChanged 事件来获取数值的变化
-        stepper.addTarget(self,action:#selector(ViewController.stepperValueIschanged),forControlEvents: UIControlEvents.ValueChanged)
+        stepper.addTarget(self,action:#selector(ViewController.stepperValueIschanged),for: UIControlEvents.valueChanged)
         
         self.view.addSubview(stepper)
         
-        label = UILabel(frame:CGRectMake(100,190,300,30))
+        label = UILabel(frame:CGRect(x: 100,y: 190,width: 300,height: 30))
         
         print(stepper.value)
 

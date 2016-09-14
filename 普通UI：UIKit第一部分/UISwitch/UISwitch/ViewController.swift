@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         uiswitch.setOn(true, animated: true)
         
         // 给开关对象添加点击事件.
-        uiswitch.addTarget(self, action: #selector(ViewController.switchDidChange), forControlEvents: UIControlEvents.ValueChanged)
+        uiswitch.addTarget(self, action: #selector(ViewController.switchDidChange), for: UIControlEvents.valueChanged)
         
         // 将开关对象,添加到当前视图控制器的根视图
         self.view.addSubview(uiswitch)
@@ -48,23 +48,23 @@ class ViewController: UIViewController {
         var message = "打开 switch"
         
         // 获取开关对象的状态, 根据状态,设置不同的文字内容
-        if !uiswitch.on {
+        if !uiswitch.isOn {
             message = "关闭 switch"
         }
         
         // 创建一个信息提示窗口,并设置其显示的内容
-        let  alert = UIAlertController(title: "信息", message:  message, preferredStyle: UIAlertControllerStyle.Alert)
+        let  alert = UIAlertController(title: "信息", message:  message, preferredStyle: UIAlertControllerStyle.alert)
         
         // 创建一个按钮,作为提示窗口中的 ( 确定 ) 按钮. 当点击该按钮时, 将关闭提示窗口
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
         
         // 将 OK 按钮 ,添加到提示窗口中
         alert.addAction(action)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
       
-        print(uiswitch.on)
+        print(uiswitch.isOn)
     }
 
   

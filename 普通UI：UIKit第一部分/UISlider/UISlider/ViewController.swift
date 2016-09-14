@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         // 滑块的创建
         
-        let slider = UISlider(frame: CGRectMake(0, 0, 300, 50))
+        let slider = UISlider(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
         
         slider.center = self.view.center
         
@@ -37,18 +37,18 @@ class ViewController: UIViewController {
         slider.setValue(0.8, animated: true)
         
         // 如果属性continuous 为false，这时将滑块移动停止后，才会触发ValueChanged事件
-        slider.continuous = false
+        slider.isContinuous = false
         
-        slider.addTarget(self,action:#selector(ViewController.sliderDidchange(_:)), forControlEvents:UIControlEvents.ValueChanged)
+        slider.addTarget(self,action:#selector(ViewController.sliderDidchange(_:)), for:UIControlEvents.valueChanged)
        
         // 制定滑块的样式
         // 通过 minimumTrackTintColor 和 maximumTrackTintColor 设置滑块左右俩边的颜色
 
-        slider.minimumTrackTintColor = UIColor.whiteColor()
-        slider.maximumTrackTintColor = UIColor.blackColor()
+        slider.minimumTrackTintColor = UIColor.white
+        slider.maximumTrackTintColor = UIColor.black
         
         // 设置圆形滑块颜色
-        slider.thumbTintColor = UIColor.whiteColor()
+        slider.thumbTintColor = UIColor.white
         
         // 通过 minimumValueImage 和 maximumValueImage 2个属性向滑块左右俩边增加图标
         slider.minimumValueImage = UIImage(named:"volume-down")
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         // 设置滑块的图片
         // slider.setThumbImage(UIImage(named:"slider_thumb"),forState:UIControlState.Normal)
         
-        self.view.backgroundColor = UIColor.grayColor()
+        self.view.backgroundColor = UIColor.gray
         
         
         self.view.addSubview(slider)
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
 
     
     // 移动滑块停止后，会打印出当前滑块的值
-    func sliderDidchange(slider:UISlider){
+    func sliderDidchange(_ slider:UISlider){
         
         print(slider.value)
     }

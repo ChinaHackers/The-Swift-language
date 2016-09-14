@@ -40,26 +40,26 @@ class ViewController: UIViewController {
         
         // 创建UIAlertView控件， 指定标题、指定消息、指定委托对象、为底部的取消按钮设置标题
         
-        let alert = UIAlertController(title:"登录", message:  "请输入用户名和密码登录系统", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title:"登录", message:  "请输入用户名和密码登录系统", preferredStyle: UIAlertControllerStyle.alert)
         
-        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (_) -> Void in
+        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default) { (_) -> Void in
             
         }
         
 
         // 设置该警告框显示输入用户名和密码的输入框
     
-        alert.addTextFieldWithConfigurationHandler {
+        alert.addTextField {
             (textField: UITextField!) -> Void in
             textField.placeholder = "登录"
         }
        
-        alert.addTextFieldWithConfigurationHandler {
+        alert.addTextField {
             (textField: UITextField!) -> Void in
             textField.placeholder = "密码"
             
             //开启密码暗文
-            textField.secureTextEntry = true
+            textField.isSecureTextEntry = true
             
         }
         
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         
         
         //弹出提示框
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     

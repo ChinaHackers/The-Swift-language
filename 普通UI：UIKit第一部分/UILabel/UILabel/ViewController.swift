@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         // 1.标签（Label）的创建
         
         //创建标签（Label）
-        let label = UILabel(frame: CGRectMake(20, 100, 300, 100))
+        let label = UILabel(frame: CGRect(x: 20, y: 100, width: 300, height: 100))
         
         //设置标签显示文字
         label.text = "The Swift Programming Language ！"
@@ -28,10 +28,10 @@ class ViewController: UIViewController {
         // 2.背景颜色、文字颜色的设置
         
         // 设置标签文字颜色为白色
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         
         // 设置标签背景颜色为紫色
-        label.backgroundColor = UIColor.purpleColor()
+        label.backgroundColor = UIColor.purple
         
         // 3.对齐方式的设置
         /*
@@ -42,20 +42,20 @@ class ViewController: UIViewController {
          NStextAlignment.Left ->左对齐
         */
         
-        label.textAlignment = NSTextAlignment.Center
+        label.textAlignment = NSTextAlignment.center
 
         // 4.文字阴影的设置
         // 文字阴影的颜色用 shadowColor 属性设置，阴影的偏移量可以用属性 shadowOffset 来指定。
         
         // 设置文字阴影颜色为 gray（灰色）
-        label.shadowColor = UIColor.grayColor()
+        label.shadowColor = UIColor.gray
         
         // shadowOffset 属性值，需要用到 CGSizeMake 函数来生成，
         // 函数的第一个参数表示 X 轴的偏移量，第二个参数表示 Y 轴的偏移量
-        label.shadowOffset = CGSizeMake(-5, 5)
+        label.shadowOffset = CGSize(width: -5, height: 5)
         
         //遍历系统所有的字体
-        for name in UIFont.familyNames() {
+        for name in UIFont.familyNames {
             print("\(name)")
         }
 
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
       
         */
         
-        label.lineBreakMode = NSLineBreakMode.ByTruncatingMiddle
+        label.lineBreakMode = NSLineBreakMode.byTruncatingMiddle
      
         // 7.文字的自动调整
         /*

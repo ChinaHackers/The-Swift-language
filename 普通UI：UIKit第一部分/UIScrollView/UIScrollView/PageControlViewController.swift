@@ -27,7 +27,7 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate {
         
         
         // 获取当前屏幕尺寸
-        var screenFrame = UIScreen.mainScreen().bounds
+        var screenFrame = UIScreen.main.bounds
         
         // 获取屏幕尺寸的 宽\高
         let screenWidth = screenFrame.size.width
@@ -37,13 +37,13 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate {
         scrollView.frame = screenFrame
         
         // 设置滚动视图 为翻页属性, 每滚动一次就是一页
-        scrollView.pagingEnabled = true
+        scrollView.isPagingEnabled = true
         
         // 设置滚动视图尺寸, 之前创建了4个页面, 所以设置滚动视图 的宽度 为页面的4倍
-        scrollView.contentSize = CGSizeMake(screenWidth * 4, screenHight)
+        scrollView.contentSize = CGSize(width: screenWidth * 4, height: screenHight)
         
         // 设置滚动视图的背景颜色为黑色
-        scrollView.backgroundColor = UIColor.blackColor()
+        scrollView.backgroundColor = UIColor.black
         
         // 设置滚动视图的代理 为当前类 ,来实现捕捉滚动视图的动作
         scrollView.delegate = self
@@ -52,7 +52,7 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate {
         let pHight: CGFloat = 50.0
         
         // 创建一个区域, 显示页面控制器 对象
-        let pRect = CGRectMake(0, screenHight - pHight, screenWidth, pHight)
+        let pRect = CGRect(x: 0, y: screenHight - pHight, width: screenWidth, height: pHight)
         
         // 设置页面控制器的显示区域
         pageControl.frame = pRect
@@ -65,17 +65,16 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate {
         
         
         // pageIndicatorTintColor: 设置未选择页面小白点颜色
-        
-        pageControl.pageIndicatorTintColor = UIColor.whiteColor()
+        pageControl.pageIndicatorTintColor = UIColor.white
         
         // 设置页面控制器的当前页码
         pageControl.currentPage = 0
         
         // 设置页面控制器的背景颜色 为 透明色
-        pageControl.backgroundColor = UIColor.clearColor()
+        pageControl.backgroundColor = UIColor.clear
         
         // 给页面控制器,添加 监听页面切换 的方法
-        pageControl.addTarget(self, action: #selector(PageControlViewController.sliding), forControlEvents: UIControlEvents.ValueChanged)
+        pageControl.addTarget(self, action: #selector(PageControlViewController.sliding), for: UIControlEvents.valueChanged)
         
       
         // 创建 First 视图控制器实例
@@ -143,10 +142,8 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    
     // 监听滚动视图事件 代理方法
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
        
         // 如果切换页面 ,则不执行后面的代码
         if !usePageControl {
@@ -163,9 +160,8 @@ class PageControlViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    
     // 创建监听滚动视图 的滚动减速事件代理方法, 重置标量的默认值
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         
         usePageControl = false
     }

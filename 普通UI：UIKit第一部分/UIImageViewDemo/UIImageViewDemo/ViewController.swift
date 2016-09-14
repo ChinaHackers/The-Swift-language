@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         // myimages.layer.cornerRadius = 75
         
         // 阴影颜色
-        myimages.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        myimages.layer.shadowColor = UIColor.lightGray.cgColor
         // 阴影的偏移度
         myimages.layer.shadowOffset = CGSize(width: 15, height: 15)
         
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
          */
         
         // 创建模糊效果类实例
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         
         // 创建效果视图类实例
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -60,15 +60,15 @@ class ViewController: UIViewController {
         
         
         //隐藏状态栏
-        self.prefersStatusBarHidden()
+        self.prefersStatusBarHidden
         
 
         // 创建按钮
         let btn = UIButton(frame: CGRect(x: 100, y: 250, width: 100, height: 30))
-        btn.setTitle("帅哥,摸我!", forState: UIControlState.Normal)
-        btn.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        btn.setTitle("帅哥,摸我!", for: UIControlState())
+        btn.setTitleColor(UIColor.lightGray, for: UIControlState())
         btn.addSubview(myimages)
-        btn.addTarget(self, action: #selector(ViewController.btnClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(ViewController.btnClicked(_:)), for: UIControlEvents.touchUpInside)
      
         // 显示
         self.view.addSubview(myimages)
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
     }
     
     // 按钮点击事件
-    func btnClicked(btn: UIButton) {
+    func btnClicked(_ btn: UIButton) {
         
         //调用alert()方法
         alert()
@@ -87,20 +87,20 @@ class ViewController: UIViewController {
     func alert() {
         
         
-        let alert = UIAlertController(title: "The handsome boy hello!", message: "My name is tingting, nice to meet you!", preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "meet you!", style: UIAlertActionStyle.Destructive, handler: nil)
-        let cancelAction = UIAlertAction(title: "bye bye!", style: UIAlertActionStyle.Cancel, handler: nil)
+        let alert = UIAlertController(title: "The handsome boy hello!", message: "My name is tingting, nice to meet you!", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "meet you!", style: UIAlertActionStyle.destructive, handler: nil)
+        let cancelAction = UIAlertAction(title: "bye bye!", style: UIAlertActionStyle.cancel, handler: nil)
         
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
     
     // 重写 prefersStatusBarHidden 隐藏状态栏方法
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         
         return true
     }

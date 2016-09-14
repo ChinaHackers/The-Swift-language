@@ -17,17 +17,17 @@ class ViewController: UIViewController {
         
         // 1.创建多行文本控件
         
-        let textView = UITextView(frame: CGRectMake(10, 100, 200, 100))
+        let textView = UITextView(frame: CGRect(x: 10, y: 100, width: 200, height: 100))
         
         textView.layer.borderWidth = 1
         
-        textView.layer.borderColor = UIColor.grayColor().CGColor
+        textView.layer.borderColor = UIColor.gray.cgColor
         
         textView.text="第一行\n第二行\n第三行\n第四行\n第五行"
         
-        textView.editable = false
+        textView.isEditable = false
         
-        textView.dataDetectorTypes = UIDataDetectorTypes.All
+        textView.dataDetectorTypes = UIDataDetectorTypes.all
         
         textView.scrollRangeToVisible(NSMakeRange(0, 50))
         

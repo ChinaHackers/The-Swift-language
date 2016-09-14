@@ -11,7 +11,7 @@ import UIKit
 class MyViewController: UIViewController {
     
     var number: Int!
-    let colorMap = [1: UIColor.blackColor(), 2: UIColor.orangeColor(), 3: UIColor.blueColor()]
+    let colorMap = [1: UIColor.black, 2: UIColor.orange, 3: UIColor.blue]
     
     
     init(number initNumber: Int) {
@@ -23,12 +23,12 @@ class MyViewController: UIViewController {
 
     override func viewDidLoad() {
 
-        let numberLabel = UILabel(frame: CGRectMake(0, 0, 100, 100))
+        let numberLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         numberLabel.center = self.view.center
         
         numberLabel.text = "第\(number)页"
         
-        numberLabel.textColor = UIColor.whiteColor()
+        numberLabel.textColor = UIColor.white
         self.view.addSubview(numberLabel)
         
         self.view.backgroundColor = colorMap[number]

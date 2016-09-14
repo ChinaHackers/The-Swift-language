@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBAction func changeLight(sender: UISlider) {
+    @IBAction func changeLight(_ sender: UISlider) {
         
         image.alpha = CGFloat(sender.value)
         print(sender.value)
@@ -30,4 +30,3 @@ class ViewController: UIViewController {
 
 
 }
-

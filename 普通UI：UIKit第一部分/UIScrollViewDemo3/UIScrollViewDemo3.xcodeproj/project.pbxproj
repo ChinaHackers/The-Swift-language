@@ -16,6 +16,7 @@
 		6B36E12B1D09DE6300F7C758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B36E1291D09DE6300F7C758 /* Main.storyboard */; };
 		6B36E12D1D09DE6300F7C758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B36E12C1D09DE6300F7C758 /* Assets.xcassets */; };
 		6B36E1301D09DE6300F7C758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B36E12E1D09DE6300F7C758 /* LaunchScreen.storyboard */; };
+		6BF517CC1D85311A00142B1F /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF517CB1D85311A00142B1F /* secondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6B36E12C1D09DE6300F7C758 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B36E12F1D09DE6300F7C758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B36E1311D09DE6300F7C758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BF517CB1D85311A00142B1F /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				6B36E1251D09DE6300F7C758 /* AppDelegate.swift */,
 				6B36E1271D09DE6300F7C758 /* ViewController.swift */,
 				6B36E1291D09DE6300F7C758 /* Main.storyboard */,
+				6BF517CB1D85311A00142B1F /* secondViewController.swift */,
 				6B36E12C1D09DE6300F7C758 /* Assets.xcassets */,
 				6B36E12E1D09DE6300F7C758 /* LaunchScreen.storyboard */,
 				6B36E1311D09DE6300F7C758 /* Info.plist */,
@@ -111,11 +114,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = LC;
 				TargetAttributes = {
 					6B36E1211D09DE6300F7C758 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -160,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B36E1281D09DE6300F7C758 /* ViewController.swift in Sources */,
+				6BF517CC1D85311A00142B1F /* secondViewController.swift in Sources */,
 				6B36E1261D09DE6300F7C758 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,8 +205,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -245,8 +252,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -265,6 +274,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -278,6 +288,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.UIScrollViewDemo3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -290,6 +301,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.UIScrollViewDemo3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
