@@ -62,8 +62,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
         //创建表头标签
         let headerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 30))
-        headerLabel.backgroundColor = UIColor.purple()
-        headerLabel.textColor = UIColor.white()
+        headerLabel.backgroundColor = UIColor.purple
+        headerLabel.textColor = UIColor.white
         headerLabel.numberOfLines = 0
         headerLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         headerLabel.text = "常见 UIKit 控件"
@@ -174,7 +174,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       
         // 设置 cell 被选中时的背景
         let aw = UIView(frame: cell.frame)
-        aw.backgroundColor = UIColor.orange()
+        aw.backgroundColor = UIColor.orange
         cell.selectedBackgroundView = aw
         
         // MARK: - 开启编辑模式进行多选操作, 即cell  √ 打钩选择
@@ -332,11 +332,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let userInfo = (notification as NSNotification).userInfo!
         
         //键盘尺寸
-        let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue()
+        let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         var contentInsets:UIEdgeInsets
         
         //判断是横屏还是竖屏
-        let statusBarOrientation = UIApplication.shared().statusBarOrientation
+        let statusBarOrientation = UIApplication.shared.statusBarOrientation
         
         if UIInterfaceOrientationIsPortrait(statusBarOrientation) {
         

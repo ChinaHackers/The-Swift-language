@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         // 注册 TableViewCell
-        self.table.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
+        self.table.register(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
         
         
     }
@@ -51,29 +51,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     // 设置返回表格行数 ,返回的就是 language 存储的数量
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.searchData.count
         
     }
     
     // 设置每组显示的内容 (创建参数indexPath指定的单元)
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let identify = "SwiftCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identify, for: indexPath)
         
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
-        cell.textLabel?.text = self.searchData[indexPath.row]
+        cell.textLabel?.text = self.searchData[(indexPath as NSIndexPath).row]
         
         return cell
     }
     
     // UISearchBarDelegate 搜索代理方法. 每次改变搜搜内容时调用
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         // 没有搜索时,显示全部内容
         if searchText == "" {
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             for lang in self.language {
                 
                 
-                if lang.lowercaseString.hasPrefix(searchText) {
+                if lang.lowercased().hasPrefix(searchText) {
                     
                     
                     self.searchData.append(lang)
@@ -101,7 +101,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     // touchesBegan: 点击屏幕时,触发该方法
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // 设置 searchBar 不再是第一响应
         searchBar.resignFirstResponder()

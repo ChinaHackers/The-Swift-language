@@ -15,15 +15,15 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func btnClicked(sender:UIBarButtonItem) {
+    @IBAction func btnClicked(_ sender:UIBarButtonItem) {
    
-        let alertView = UIAlertController(title: "提示", message: "你点击了【\(sender.title!)】按钮", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertView = UIAlertController(title: "提示", message: "你点击了【\(sender.title!)】按钮", preferredStyle: UIAlertControllerStyle.alert)
         
-        let OKAction = UIAlertAction(title: "知道了", style: UIAlertActionStyle.Default, handler: nil)
+        let OKAction = UIAlertAction(title: "知道了", style: UIAlertActionStyle.default, handler: nil)
         
         alertView.addAction(OKAction)
         
-        self.presentViewController(alertView, animated: true, completion: nil)
+        self.present(alertView, animated: true, completion: nil)
         
     }
 

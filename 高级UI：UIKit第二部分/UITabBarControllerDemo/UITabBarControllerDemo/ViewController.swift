@@ -13,10 +13,8 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     // 添加 Tab Bar 控件
     var tabBar: UITabBar!
-    
     // Tab Bar item 的名称
     var tabs = ["iOS", "Swift", "HTML", "Java"]
-    
     // Tab Bar 上方的视图
     var contentView: UIView!
 
@@ -24,8 +22,8 @@ class ViewController: UIViewController, UITabBarDelegate {
         super.viewDidLoad()
         
         // UITabBarController (标签控件)
-        // 创建 Tab Bar
-        // Tab Bar 默认高度: 44\ 48
+        // 创建 TabBar
+        // TabBar 默认高度: 44\ 48
         tabBar = UITabBar(frame: CGRect(x: 0, y: self.view.bounds.height - 48, width: self.view.bounds.width, height: 48))
         
         // 设置 tabBar 的颜色

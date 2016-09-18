@@ -46,13 +46,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
          UIBarStyle.Default
          UIBarStyle.Black
          */
-        searchBar.barStyle = UIBarStyle.Default
+        searchBar.barStyle = UIBarStyle.default
 
         // 设置搜索条渲染的颜色
-        searchBar.tintColor = UIColor.blueColor()
+        searchBar.tintColor = UIColor.blue
         
         // 设置搜索框背景颜色
-        searchBar.barTintColor = UIColor.redColor()
+        searchBar.barTintColor = UIColor.red
         
         // 设置搜索框是否显示查询按钮: 搜索框右边显示一个圆形向下的按钮，单击会发送特殊事件.
         //searchBar.showsSearchResultsButton = true
@@ -66,8 +66,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
         //修改搜索条（UISearchBar）中取消按钮的文字、颜色
         
         // 先获取到 searchBar 中的取消按钮，再设置这个按钮的 title 即可
-        let uiButton = searchBar.valueForKey("cancelButton") as! UIButton
-        uiButton.setTitle("搜索", forState: UIControlState.Normal)
+        let uiButton = searchBar.value(forKey: "cancelButton") as! UIButton
+        uiButton.setTitle("搜索", for: UIControlState())
         
         // showsScopeBar: 系统将会在搜索框下方显示分段条控制器
         searchBar.showsScopeBar = true
@@ -85,7 +85,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     // touchesBegan: 点击屏幕时,触发该方法
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // 设置 searchBar 不再是第一响应
         searchBar.resignFirstResponder()
@@ -93,20 +93,20 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     // selectedScopeButtonIndexDidChange: 当用户点击分段条上的分段按钮, 触发该方法
-    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         
         print(selectedScope)
         
     }
     
     // textDidChange: 当搜索框内文本发生改变时,触发该方法
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         print(searchText)
     }
     
     // shouldChangeTextInRange: 监测用户输入的文字
-    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         print(text)
         
@@ -114,28 +114,28 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     // searchBarBookmarkButtonClicked: 当用户点击搜索框上的查询(书签)按钮时,触发该方法
-    func searchBarBookmarkButtonClicked(searchBar: UISearchBar) {
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
         
         print("点击了书签按钮!!!")
     }
     
     
     // searchBarSearchButtonClicked: 点击搜索框右边显示一个圆形向下的按钮,触发该方法
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         
     }
     
     
     // 搜索框的文本结束编辑时调用
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         
         
         
     }
     
     // searchBarShouldBeginEditing: 当点击搜索框进行编辑时,触发该方法
-    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         
         // false: searchBar 成为第一响应者  true: searchBar 不成为第一响应者
         return true
@@ -143,7 +143,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     
     // searchBarShouldEndEditing: 当点击搜索框结束编辑时,触发该方法
-    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         
         // false: searchBar 结束第一响应者 true: searchBar 不会结束第一响应者
         return true

@@ -29,7 +29,7 @@ class SecondViewController: UIViewController {
         // self.title = "Second"
         
         // 设置当前视图控制器的背景颜色
-        self.view.backgroundColor = UIColor.purpleColor()
+        self.view.backgroundColor = UIColor.purple
         
         
         // 添加2个按钮
@@ -38,27 +38,27 @@ class SecondViewController: UIViewController {
         let btHiddenBar = UIButton(frame: CGRect(x: 40, y: 200, width: 240, height: 30))
         
         // 设置按钮标题文字
-        btHiddenBar.setTitle("Hide Navigation Bar", forState: UIControlState.Normal)
+        btHiddenBar.setTitle("Hide Navigation Bar", for: UIControlState())
         
         // 设置按钮的背景颜色
-        btHiddenBar.backgroundColor = UIColor.orangeColor()
+        btHiddenBar.backgroundColor = UIColor.orange
         
         // 给按钮绑定点击事件
-        btHiddenBar.addTarget(self, action: #selector(SecondViewController.HiddenNaviBar), forControlEvents: UIControlEvents.TouchUpInside)
+        btHiddenBar.addTarget(self, action: #selector(SecondViewController.HiddenNaviBar), for: UIControlEvents.touchUpInside)
         
         
         // 创建第二个按钮, 点击该按钮 隐藏底部的工具栏
         let btHiddenToolBar = UIButton(frame: CGRect(x: 40, y: 260, width: 240, height: 30))
         
         // 设置按钮的标题文字
-        btHiddenToolBar.setTitle("Hide Tool Bar", forState: UIControlState.Normal)
+        btHiddenToolBar.setTitle("Hide Tool Bar", for: UIControlState())
         
         // 设置按钮的背景颜色
-        btHiddenToolBar.backgroundColor = UIColor.orangeColor()
+        btHiddenToolBar.backgroundColor = UIColor.orange
         
         
         // 给按钮绑定点击事件
-        btHiddenToolBar.addTarget(self, action: #selector(SecondViewController.HiddenToolBar), forControlEvents: UIControlEvents.TouchUpInside)
+        btHiddenToolBar.addTarget(self, action: #selector(SecondViewController.HiddenToolBar), for: UIControlEvents.touchUpInside)
         
         
         // 将按钮添加到当前视图控制器 的根视图

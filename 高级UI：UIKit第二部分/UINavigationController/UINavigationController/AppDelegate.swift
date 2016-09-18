@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 创建导航控制器
     let nav = UINavigationController()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.backgroundColor = UIColor.whiteColor()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
         
         // UINavigationController (导航控制器)
         
@@ -33,14 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //nav.navigationItem.prompt = "Loading..."
         
         // 设置导航栏的背景是否透明
-        nav.navigationController?.navigationBar.translucent = false
+        nav.navigationController?.navigationBar.isTranslucent = false
         
 
         // 设置导航栏的系统样式
-        nav.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        nav.navigationController?.navigationBar.barStyle = UIBarStyle.black
         
         // 设置导航栏的前景颜色
-        nav.navigationController?.navigationBar.tintColor = UIColor.orangeColor()
+        nav.navigationController?.navigationBar.tintColor = UIColor.orange
         
         
         // 创建第一个控制器, 并添加到导航控制器中
@@ -63,10 +63,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 设置图片显示比例
         //  UIViewContentMode.ScaleAspectFit 保证图片比例不变，而且全部显示在ImageView中，这意味着ImageView会有部分空白。
-        images.contentMode = UIViewContentMode.ScaleAspectFit
+        images.contentMode = UIViewContentMode.scaleAspectFit
         
         // 设置右上角导航按钮的样式\功能.
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(AppDelegate.next))
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(getter: AppDelegate.next))
         
         self.window?.makeKeyAndVisible()
         
@@ -93,10 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 设置图片显示比例
         //  UIViewContentMode.ScaleAspectFit 保证图片比例不变，而且全部显示在ImageView中，这意味着ImageView会有部分空白。
-        images2.contentMode = UIViewContentMode.ScaleAspectFit
+        images2.contentMode = UIViewContentMode.scaleAspectFit
        
         // 设置右上角导航按钮的样式\功能.
-        vc2.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(AppDelegate.next2))
+        vc2.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(AppDelegate.next2))
     }
     // 添加第二个视图控制器跳转方法
     func next2() {
@@ -118,32 +118,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 设置图片显示比例
         //  UIViewContentMode.ScaleAspectFit  保证图片比例不变，而且全部显示在ImageView中，这意味着ImageView会有部分空白。
-        images3.contentMode = UIViewContentMode.ScaleAspectFit
+        images3.contentMode = UIViewContentMode.scaleAspectFit
         
         vc3.view.addSubview(images3)
  
         
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 

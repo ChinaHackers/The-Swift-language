@@ -66,7 +66,7 @@ class MyTableViewCell: UITableViewCell, UITextFieldDelegate {
         
         // 初始化文本标签
         label = UITextField(frame: CGRect.null)
-        label.textColor = UIColor.black()
+        label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 16)
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)

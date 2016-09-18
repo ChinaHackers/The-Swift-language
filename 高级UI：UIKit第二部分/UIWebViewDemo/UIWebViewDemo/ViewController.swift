@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var table: UITableView!
     
     //进度条计时器
-    var ptimer: NSTimer!
+    var ptimer: Timer!
     
     // 进度条控件
     var progBar: UIProgressView!
@@ -33,8 +33,8 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
         
         self.webView.delegate = self
         
-        loadIndicator = UIActivityIndicatorView(frame: CGRectMake(100.0, 100.0, 32.0, 32.0))
-        loadIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        loadIndicator = UIActivityIndicatorView(frame: CGRect(x: 100.0, y: 100.0, width: 32.0, height: 32.0))
+        loadIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         
         self.view.addSubview(loadIndicator)
         txtUrl.delegate = self
@@ -49,57 +49,57 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     func setupBrowserToolbar()
     {
         // 创建一个浏览器工具条，并设置它的大小和位置
-        let browserToolbar =  UIToolbar(frame:CGRectMake(0, 150, 320, 44))
+        let browserToolbar =  UIToolbar(frame:CGRect(x: 0, y: 150, width: 320, height: 44))
         
         // 将工具条添加到当前应用的界面中
         self.view.addSubview(browserToolbar)
         
         //创建图片工具条，但是不是直接使用文件名，而是用 NSData 方式初始化 UIImage
-        let path = NSBundle.mainBundle().pathForResource("back", ofType:"png")
+        let path = Bundle.main.path(forResource: "back", ofType:"png")
         
-        let urlStr = NSURL.fileURLWithPath(path!)
+        let urlStr = URL(fileURLWithPath: path!)
 
-        let data = NSData(contentsOfURL:urlStr)
+        let data = try? Data(contentsOf: urlStr)
  
-        let btnback = UIBarButtonItem(image: UIImage(data: data!), style: UIBarButtonItemStyle.Bordered, target: self, action: #selector(ViewController.backClicked(_:)))
+        let btnback = UIBarButtonItem(image: UIImage(data: data!), style: UIBarButtonItemStyle.bordered, target: self, action: #selector(ViewController.backClicked(_:)))
         
         
         
         
         //第一个分隔按钮
-        let btngap1 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.FlexibleSpace, target: nil, action:nil)
+        let btngap1 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace, target: nil, action:nil)
         
         // 创建前进按钮 UIBarButtonItem
 
         
-        let btnforward = UIBarButtonItem(image: UIImage(named: "forward.png"), style: UIBarButtonItemStyle.Plain, target: self, action:#selector(ViewController.forwardClicked(_:)))
+        let btnforward = UIBarButtonItem(image: UIImage(named: "forward.png"), style: UIBarButtonItemStyle.plain, target: self, action:#selector(ViewController.forwardClicked(_:)))
         
         
         // 第二个分隔按钮，创建一个可伸缩的UIBarButtonItem
-        let btngap2 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.FlexibleSpace, target:nil, action:nil)
+        let btngap2 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace, target:nil, action:nil)
         
         // 创建重新加载按钮 UIBarButtonItem
         
-        let btnreload = UIBarButtonItem(image: UIImage(named: "reload.png"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ViewController.reloadClicked(_:)))
+        let btnreload = UIBarButtonItem(image: UIImage(named: "reload.png"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.reloadClicked(_:)))
         
         
         //第三个分隔按钮
-        let btngap3 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.FlexibleSpace, target: nil, action:nil)
+        let btngap3 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace, target: nil, action:nil)
         
         //创建加载停止按钮
 
         
-        let btnstop = UIBarButtonItem(image: UIImage(named: "stop"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ViewController.stopClicked(_:)))
+        let btnstop = UIBarButtonItem(image: UIImage(named: "stop"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.stopClicked(_:)))
         
         
         //第四个分隔按钮
-        let btngap4 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.FlexibleSpace, target: nil, action:nil)
+        let btngap4 =  UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace, target: nil, action:nil)
         
         //创建进度工具条
-        progBar = UIProgressView(progressViewStyle:UIProgressViewStyle.Bar)
+        progBar = UIProgressView(progressViewStyle:UIProgressViewStyle.bar)
         
         // 设置UIProgressView的大小
-        progBar.frame = CGRectMake(0 , 0 , 80, 20)
+        progBar.frame = CGRect(x: 0 , y: 0 , width: 80, height: 20)
         
         // 设置该进度条的初始进度为0
         progBar.progress = 0
@@ -111,14 +111,14 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
         browserToolbar.setItems( [btnback,btngap1, btnforward,btngap2, btnreload,btngap3, btnstop,btngap4, btnprog ], animated:true)
         
         //创建计时器对象
-        let ptimer = NSTimer.scheduledTimerWithTimeInterval(0.2, target:self ,selector: #selector(ViewController.loadProgress), userInfo:nil,repeats:true)
+        let ptimer = Timer.scheduledTimer(timeInterval: 0.2, target:self ,selector: #selector(ViewController.loadProgress), userInfo:nil,repeats:true)
        
         ptimer.invalidate()
     }
     
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         txtUrl.resignFirstResponder()
         print(" url Changed! ")
@@ -134,37 +134,37 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     在 UIWebView 加载指定 URL
     */
     
-    func loadUrl(url:String) {
+    func loadUrl(_ url:String) {
         
-        let urlobj = NSURL(string:url)
+        let urlobj = URL(string:url)
         
-        let request = NSURLRequest(URL:urlobj!)
+        let request = URLRequest(url:urlobj!)
         
         webView.loadRequest(request)
     }
     
     
-    func stopClicked(sender:UIBarButtonItem) {
+    func stopClicked(_ sender:UIBarButtonItem) {
         
         webView.stopLoading()
     }
     
-    func reloadClicked(sender:UIBarButtonItem) {
+    func reloadClicked(_ sender:UIBarButtonItem) {
         
         webView.reload()
     }
     
-    func backClicked(sender:UIBarButtonItem) {
+    func backClicked(_ sender:UIBarButtonItem) {
         
         webView.goBack()
     }
     
-    func forwardClicked(sender:UIBarButtonItem) {
+    func forwardClicked(_ sender:UIBarButtonItem) {
         
         webView.goForward()
     }
     
-    @IBAction func goClicked(sender:UIButton) {
+    @IBAction func goClicked(_ sender:UIButton) {
        
         //收起输入面板
         txtUrl.resignFirstResponder()
@@ -173,7 +173,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
         
     }
     
-    func webViewDidStartLoad(webView:UIWebView) {
+    func webViewDidStartLoad(_ webView:UIWebView) {
        
         progBar.setProgress(0, animated: false)
         
@@ -183,7 +183,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
         
     }
     
-    func webViewDidFinishLoad(webView:UIWebView) {
+    func webViewDidFinishLoad(_ webView:UIWebView) {
         
         loadIndicator.stopAnimating()
         
@@ -210,15 +210,15 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     }
     
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         
         let alertview = UIAlertView()
         
         alertview.title = "出错!"
         
-        alertview.message = error!.localizedDescription
+        alertview.message = error.localizedDescription
         
-        alertview.addButtonWithTitle("确定")
+        alertview.addButton(withTitle: "确定")
         
         alertview.show()
     }

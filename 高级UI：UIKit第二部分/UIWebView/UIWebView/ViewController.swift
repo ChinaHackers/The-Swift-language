@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         typeChanged(loadType)
     }
 
-    @IBAction func typeChanged(sender: UISegmentedControl) {
+    @IBAction func typeChanged(_ sender: UISegmentedControl) {
         
         let index = sender.selectedSegmentIndex
        
@@ -34,28 +34,22 @@ class ViewController: UIViewController {
             let html = "<h1><a href='http://www.ucai.cn'>优才网(http://www.ucai.cn)</a>，助力优秀人才成长！</h1>"
             webView.loadHTMLString(html, baseURL: nil)
         case 1:
-            let path = NSBundle.mainBundle().pathForResource("2048", ofType: "pdf")
+            let path = Bundle.main.path(forResource: "2048", ofType: "pdf")
             
-            let urlStr = NSURL.fileURLWithPath(path!)
+            let urlStr = URL(fileURLWithPath: path!)
             print(urlStr)
             
-            webView.loadRequest(NSURLRequest(URL:urlStr))
+            webView.loadRequest(URLRequest(url:urlStr))
             
         case 2: //在UIWebView 中显示 PDF, 但是需通过 loadData 方式加载
             
+            let path = Bundle.main.path(forResource: "2048", ofType:"pdf")
             
-            let path = NSBundle.mainBundle().pathForResource("2048", ofType:"pdf")
+            let urlStr = URL(fileURLWithPath: path!)
+            let data = try? Data(contentsOf: urlStr)
+          //  webView.loadData(data!,  MIMEType:"application/pdf", textEncodingName:"utf-8",baseURL: nil)
             
-            let urlStr = NSURL.fileURLWithPath(path!)
-            let data = NSData(contentsOfURL:urlStr)
-            
-//            webView.loadData(data!,  MIMEType:"application/pdf", textEncodingName:"utf-8",baseURL: nil)
-            
-            
-            webView.loadData(data!, MIMEType: "appliction/pdf", textEncodingName: "utf-8", baseURL: urlStr)
-            @IBOutlet weak var searchBar: UISearchBar!
-            
-            
+            webView.load(data!, mimeType: "appliction/pdf", textEncodingName: "utf-8", baseURL: urlStr)
             
         default:
             print("是不是出错了？")

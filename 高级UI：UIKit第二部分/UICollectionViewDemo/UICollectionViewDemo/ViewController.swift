@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     //创建数组 存储集合数据的来源
-    var images = []
+    var images = [String]()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,20 +28,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // MARK: - UICollectionViewDelegate
     
     // 设置集合视图单元格数量
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return images.count
     }
 
     
     //初始化\返回集合视图的单元格 (主要)
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // 创建字符串 作为 单元格标识符. storyboard 里面设置的 重用标识符
         let identify = "reusedCell"
         
         // 从所有单元格里面,选择具有同样标识符的 空闲单元格
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identify, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identify, for: indexPath)
         
         // 通过 storyboard 里面设置的标识值, 获得单元格中的图像控件
         let imageView = cell.viewWithTag(1) as! UIImageView
@@ -50,10 +50,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         imageView.layer.opacity = 0.5
         
         // 根据表格行编号, 从数组中获得对应的图像名称
-        let imageName = images[indexPath.row]
+        let imageName = images[(indexPath as NSIndexPath).row]
         
         // 将加载的图像,指定给图像视图
-        imageView.image = UIImage(named: imageName as! String)
+        imageView.image = UIImage(named: imageName )
         
         // 返回单元格对象
         return cell
@@ -61,11 +61,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     // 处理单元格点击事件
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
         // 根据单元格的编号, 获得被点击的单元格
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        let cell = collectionView.cellForItem(at: indexPath)
         
         // 通过 storyboard 里面设置的标识值, 获得单元格中的图像控件
         let view = cell?.viewWithTag(1)
@@ -73,7 +73,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // 设置图像视图的透明度 为 完全不透明
         view?.layer.opacity = 1.0
         
-        print("点击了图片lxm\(indexPath.item+1).JPG")
+        print("点击了图片lxm\((indexPath as NSIndexPath).item+1).JPG")
         
         
     }

@@ -40,13 +40,13 @@ class ViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataS
     // UIPickerViewDataSource
     
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return citys.count
     }
     
     
     // 显示多少列
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return citys.count
         
@@ -54,7 +54,7 @@ class ViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataS
     
     
     // 标题
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return citys[row]
         

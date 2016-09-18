@@ -18,21 +18,19 @@ class FirstViewController: UIViewController {
         self.title = "First"
         
         // 设置当前视图控制器的背景颜色
-        self.view.backgroundColor = UIColor.brownColor()
+        self.view.backgroundColor = UIColor.orange
         
         
         // 设置右上角导航按钮的样式\功能.
         // 当点击此导航按钮时, 页面就跳转第二个视图控制器
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(FirstViewController.nextPage))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FirstViewController.nextPage))
         
         
         // 实例化一个工具条按钮对象
-        let leftBar = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: #selector(FirstViewController.refresh))
+        let leftBar = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(FirstViewController.refresh))
         
         // 设置导航栏左侧按钮 为 工具条对象
         self.navigationItem.leftBarButtonItem = leftBar
-        
-        
         
     }
 
@@ -55,7 +53,7 @@ class FirstViewController: UIViewController {
     // 视图控制器生命周期中, 视图即将显示的代理方法
     // 视图即将可见时, 执行该方法
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         // 覆盖父类的同名方法
         super.viewWillAppear(animated)
@@ -64,13 +62,16 @@ class FirstViewController: UIViewController {
         self.navigationItem.prompt = "Loading..."
         
         // 设置导航栏的背景是否透明
-        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.isTranslucent = true
 
         // 设置导航栏的系统样式
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        
+        //修改导航栏文字颜色
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         // 设置导航栏的前景颜色
-        self.navigationController?.navigationBar.tintColor = UIColor.orangeColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.orange
        
         // 显示底部的工具栏
         self.navigationController?.setToolbarHidden(false, animated: false)
@@ -81,16 +82,16 @@ class FirstViewController: UIViewController {
     func refresh() {
         
         // 创建警告弹出窗口
-        let alert = UIAlertController(title: "Info", message: "Refresh Feeling", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Info", message: "Refresh Feeling", preferredStyle: UIAlertControllerStyle.alert)
         
         // 创建提示窗口中的[确定]按钮
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
         
         // 将确定按钮添加到提示窗口中
         alert.addAction(okAction)
         
         // 显示提示窗口
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     

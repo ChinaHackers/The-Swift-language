@@ -36,36 +36,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         //创建表视图
-        self.tableView = UITableView(frame:self.view.frame, style:UITableViewStyle.Grouped)
+        self.tableView = UITableView(frame:self.view.frame, style:UITableViewStyle.grouped)
         
         // 设置表格的代理\数据源为当前视图控制器类
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
         
         //创建一个重用的单元格
-        self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
+        self.tableView!.register(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
         self.view.addSubview(self.tableView!)
         
         //创建表头标签
-        let headerLabel = UILabel(frame: CGRectMake(0, 10, self.view.bounds.size.width, 30))
-        headerLabel.backgroundColor = UIColor.purpleColor()
-        headerLabel.textColor = UIColor.whiteColor()
+        let headerLabel = UILabel(frame: CGRect(x: 0, y: 10, width: self.view.bounds.size.width, height: 30))
+        headerLabel.backgroundColor = UIColor.purple
+        headerLabel.textColor = UIColor.white
         headerLabel.numberOfLines = 0
-        headerLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        headerLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         headerLabel.text = "UIKit 控件"
-        headerLabel.font = UIFont.italicSystemFontOfSize(20)
+        headerLabel.font = UIFont.italicSystemFont(ofSize: 20)
         // 添加表头视图为 headerLabel
         self.tableView!.tableHeaderView = headerLabel
         
         
         // 创建表尾标签
-        let tailLabel = UILabel(frame: CGRectMake(0, self.view.bounds.size.height-10, self.view.bounds.size.width,30))
-        tailLabel.backgroundColor = UIColor.orangeColor()
-        tailLabel.textColor = UIColor.whiteColor()
+        let tailLabel = UILabel(frame: CGRect(x: 0, y: self.view.bounds.size.height-10, width: self.view.bounds.size.width,height: 30))
+        tailLabel.backgroundColor = UIColor.orange
+        tailLabel.textColor = UIColor.white
         tailLabel.numberOfLines = 0
-        tailLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        tailLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         tailLabel.text = "UIKit 控件 简介"
-        tailLabel.font = UIFont.italicSystemFontOfSize(20)
+        tailLabel.font = UIFont.italicSystemFont(ofSize: 20)
         
         // 添加页尾视图为 tailLabel
         self.tableView.tableFooterView = tailLabel
@@ -73,10 +73,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //导航栏编辑按钮点击事件
-    @IBAction func editBtnClick(sender: UIBarButtonItem) {
+    @IBAction func editBtnClick(_ sender: UIBarButtonItem) {
         
         //在正常状态和编辑状态之间切换
-        if(self.tableView.editing == false){
+        if(self.tableView.isEditing == false){
             
             self.tableView.setEditing(true, animated:true)
             sender.title = "保存"
@@ -94,13 +94,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK - tableView Data scource
     
     // MARK -  有多少组数据
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
     
     // MARK -  每-组有多少行
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
         let data = self.allnames?[section]
@@ -108,21 +108,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
   
     // MARK - 每一行显示的具体内容
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         //为了提供表格显示性能，已创建完成的单元需重复使用
         let identify = "SwiftCell"
         
        // indexpath.section : 代表单元格(cell)的第几个分区
-        let secno = indexPath.section
+        let secno = (indexPath as NSIndexPath).section
         let data = self.allnames?[secno]
         
         // 如果分区数为0, 返回 cell
         if(secno == 0) {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: identify, for: indexPath) as UITableViewCell
             
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             
             /*    
              //设置 UITableViewCell的style：
@@ -132,20 +132,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 (4）UITableViewCellStyle.Subtitle    ：标签上下放置
              */
             
-            cell.textLabel?.text = data![indexPath.row]
+            cell.textLabel?.text = data![(indexPath as NSIndexPath).row]
      
             return cell
             
         } else {    // 如果分区数不为0, 返回  adcell
         
             //第二个分组表格使用详细标签
-            let adcell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SwiftCell")
+            let adcell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "SwiftCell")
          
-            adcell.textLabel?.text = data![indexPath.row]
+            adcell.textLabel?.text = data![(indexPath as NSIndexPath).row]
          
             print((adcell.textLabel?.text)!)
          
-            adcell.detailTextLabel!.text = "这是\(data![indexPath.row])的说明"
+            adcell.detailTextLabel!.text = "这是\(data![(indexPath as NSIndexPath).row])的说明"
      
             return adcell
      
@@ -161,39 +161,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     删除：UITableViewCellEditingStyleDelete
     增加：UITableViewCellEditingStyleInsert
     */
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         
         // 如果分区为 1, 编辑模式为插入, 否为删除
-        if(indexPath.section == 1) {
+        if((indexPath as NSIndexPath).section == 1) {
             
-            return UITableViewCellEditingStyle.Insert
+            return UITableViewCellEditingStyle.insert
         }
-        return UITableViewCellEditingStyle.Delete
+        return UITableViewCellEditingStyle.delete
         
     }
 
     
     // 处理列表项的选中事件
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.tableView!.deselectRowAtIndexPath(indexPath, animated: true)
+        self.tableView!.deselectRow(at: indexPath, animated: true)
         
-        let itemString = self.allnames![indexPath.section]![indexPath.row]
+        let itemString = self.allnames![(indexPath as NSIndexPath).section]![(indexPath as NSIndexPath).row]
        
-        let alert = UIAlertController(title: "提示", message: "你选中了【\(itemString)】", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "提示", message: "你选中了【\(itemString)】", preferredStyle: UIAlertControllerStyle.alert)
         
-        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
         
         alert.addAction(okAction)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
 
     }
 
     // 该方法的返回值, 决定指定分区的头部
         
-    func tableView(tableView:UITableView, titleForHeaderInSection section:Int) -> String? {
+    func tableView(_ tableView:UITableView, titleForHeaderInSection section:Int) -> String? {
         
         var headers = self.adHeaders!
         
@@ -201,7 +201,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // 该方法的返回值, 决定指定分区的尾部
-    func tableView(tableView:UITableView, titleForFooterInSection  section:Int) -> String? {
+    func tableView(_ tableView:UITableView, titleForFooterInSection  section:Int) -> String? {
         
         let data = self.allnames?[section]
         
@@ -211,7 +211,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - 修改删除按钮的文字
     
-    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "删除"
     }
     
@@ -220,11 +220,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 响应单元格的删除事件：当点击delete后执行的删除过程
     // 注意：先除数据源里的数据，删除tableView中对应的行
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         
         // 如果编辑模式为删除
-        if editingStyle == UITableViewCellEditingStyle.Delete {
+        if editingStyle == UITableViewCellEditingStyle.delete {
             
             
             // dbhelper.deleteConversationBySay(conlist[indexPath.row].say)            
@@ -242,14 +242,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         //再删除tableView中对应的行 , 具有动画效果
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         
     }
     
     
     //MARK: -  在编辑状态，可以拖动设置cell位置
     
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     

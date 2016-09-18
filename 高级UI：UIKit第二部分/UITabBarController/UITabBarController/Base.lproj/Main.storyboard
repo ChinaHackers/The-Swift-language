@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vUs-46-UWd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--分类-->
+        <scene sceneID="3kx-iS-oah">
+            <objects>
+                <viewController id="fBf-Ox-RCb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="osu-1Z-oQB"/>
+                        <viewControllerLayoutGuide type="bottom" id="460-kF-poe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BX4-7Q-CHd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="分类" image="home_tab_saunter_btn" selectedImage="home_tab_saunter_selected_btn" id="kOS-Ly-yqc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QkB-1a-QBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="-255"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="f4E-IQ-ilw">
+            <objects>
+                <viewController id="gLl-Cr-mTg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JSx-8r-a8N"/>
+                        <viewControllerLayoutGuide type="bottom" id="ikt-8p-ICw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gUl-TH-wsq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="首页" image="home_tab_home_btn" selectedImage="home_tab_home_selected_btn" id="ubM-BD-uEf" userLabel="首页"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bl2-Nn-AkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47" y="-905"/>
+        </scene>
+        <!--品牌团-->
+        <scene sceneID="ek2-qa-hfL">
+            <objects>
+                <viewController id="0HO-Xo-lnI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EbO-Eo-kiw"/>
+                        <viewControllerLayoutGuide type="bottom" id="0f7-60-ZYK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q2h-Cd-Kxt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="品牌团" image="home_tab_branc_btn" selectedImage="home_tab_branc_selected_btn" id="t7u-5K-CLy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sks-Z4-nc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1398" y="468"/>
+        </scene>
+        <!--积分商城-->
+        <scene sceneID="lUg-vG-cq4">
+            <objects>
+                <viewController id="yxa-Ix-jcg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OGp-WT-hlp"/>
+                        <viewControllerLayoutGuide type="bottom" id="WBP-LA-hVH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b2d-AH-bXj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="积分商城" image="home_tab_point_btn" selectedImage="home_tab_point_selected_btn" id="WfD-xo-pPe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBh-zH-h7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727" y="456"/>
+        </scene>
+        <!--个人中心-->
+        <scene sceneID="QC0-fK-pmd">
+            <objects>
+                <viewController id="R7a-pM-6Fp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M1F-Nq-vjq"/>
+                        <viewControllerLayoutGuide type="bottom" id="KgP-jH-O85"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vQa-wp-1Cg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="个人中心" image="home_tab_personal_btn" selectedImage="home_tab_personal_selected_btn" id="J3M-ks-nPF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tym-Fx-a9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="456"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Vz8-fX-gXp">
+            <objects>
+                <tabBarController id="vUs-46-UWd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="VM7-B8-HrJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gLl-Cr-mTg" kind="relationship" relationship="viewControllers" id="4uy-IE-Xvg"/>
+                        <segue destination="fBf-Ox-RCb" kind="relationship" relationship="viewControllers" id="Ido-Th-3ob"/>
+                        <segue destination="0HO-Xo-lnI" kind="relationship" relationship="viewControllers" id="DlK-Zh-EHQ"/>
+                        <segue destination="yxa-Ix-jcg" kind="relationship" relationship="viewControllers" id="i86-Nk-Pgp"/>
+                        <segue destination="R7a-pM-6Fp" kind="relationship" relationship="viewControllers" id="ac1-o7-p69"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Boy-NA-vqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1173" y="-823"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home_tab_branc_btn" width="63" height="49"/>
+        <image name="home_tab_branc_selected_btn" width="63" height="49"/>
+        <image name="home_tab_home_btn" width="63" height="49"/>
+        <image name="home_tab_home_selected_btn" width="63" height="49"/>
+        <image name="home_tab_personal_btn" width="63" height="49"/>
+        <image name="home_tab_personal_selected_btn" width="63" height="49"/>
+        <image name="home_tab_point_btn" width="63" height="49"/>
+        <image name="home_tab_point_selected_btn" width="63" height="49"/>
+        <image name="home_tab_saunter_btn" width="63" height="49"/>
+        <image name="home_tab_saunter_selected_btn" width="63" height="49"/>
+    </resources>
+</document>
