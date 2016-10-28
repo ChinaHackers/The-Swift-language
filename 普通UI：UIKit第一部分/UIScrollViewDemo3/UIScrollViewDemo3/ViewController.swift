@@ -29,6 +29,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         //MARK: - UIScrollView (滚动视图)
+        
         // 初始化 UIScrollView 对象,并设置其位置
         scrollView = UIScrollView(frame: self.view.frame)
         

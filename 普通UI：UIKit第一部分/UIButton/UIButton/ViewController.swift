@@ -24,12 +24,11 @@ class ViewController: UIViewController {
          UIButtonType.RoundedRect        圆角按钮
          */
 
-        // 1.按钮的创建
-        
+        // MARK:- 按钮的创建
         // 创建一个 ContactAdd (+号类型 )的按钮 默认文字颜色是蓝色，有按钮触摸高亮效果
         // let button = UIButton(type: UIButtonType.ContactAdd)
         
-        //创建一个圆角按钮
+        // 创建一个圆角按钮
         let button = UIButton(type: UIButtonType.roundedRect)
         
         
@@ -42,31 +41,30 @@ class ViewController: UIViewController {
         //创建一个Custom 定制类型的图标 创建按钮代码简化为：
         // var button = UIButton(frame: CGRectMake(10, 150, 200, 30))
         
-        // 2.按钮的文字、颜色、状态
+        // MARK:- 按钮的文字、颜色、状态
         
         // 不同状态下的按钮设置不同的文字和颜色。
         // setTitle 设置按钮的文字
         
         button.setTitle("普通状态", for: UIControlState())
-//        button.setTitle("触摸状态", forState: UIControlState.Highlighted)
-//        button.setTitle("禁用状态", forState: UIControlState.Disabled)
+        // button.setTitle("触摸状态", for: UIControlState.highlighted)
+        // button.setTitle("禁用状态", for: UIControlState.disabled)
         
-        // setTitleColor: 设置不同状态下的字体颜色
+        // MARK:- setTitleColor: 设置不同状态下的字体颜色
+        
         button.setTitleColor(UIColor.black, for: UIControlState())
-//        button.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
-//        button.setTitleColor(UIColor.grayColor(), forState: .Disabled)
+       // button.setTitleColor(UIColor.green, for: .highlighted)
+       // button.setTitleColor(UIColor.gray, for: .disabled)
         
-        // setTitleShadowColor: 设置不同状态下的阴影颜色
+        // MARK:- setTitleShadowColor: 设置不同状态下的阴影颜色
         button.setTitleShadowColor(UIColor.green, for: UIControlState())
         button.setTitleShadowColor(UIColor.yellow, for: .highlighted)
         button.setTitleShadowColor(UIColor.gray, for: .disabled)
         
-        
         // 设置按钮的背景色，用UIView 的 backgroundColor 属性设置
         button.backgroundColor = UIColor.yellow
         
-        // 3.按钮的图片
-        
+        // MARK:- 按钮的图片
         // 设置按钮的图标
         button.setImage(UIImage(named: "icon"), for: UIControlState())
         
@@ -81,7 +79,7 @@ class ViewController: UIViewController {
         button.setBackgroundImage(UIImage(named:"background"),for:UIControlState())
         
         
-        // 4.按钮的触摸事件
+         // MARK:- 按钮的触摸事件
         
         // 在按钮被触摸时，会执行一些程序，用 addTarget 方法监听按钮触摸事件
         /*

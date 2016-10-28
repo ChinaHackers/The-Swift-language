@@ -16,13 +16,13 @@ class ViewController: UIViewController {
         // 创建一个按钮, 点击按钮时,弹出警告窗口
         let btn = UIButton(type: UIButtonType.system)
         
-        //设置按钮的位置
+        // 设置按钮的位置
         btn.frame = CGRect(x: 120, y: 166, width: 120, height: 30)
         
-        //设置按钮在正常状态下的标题文字
+        // 设置按钮在正常状态下的标题文字
         btn.setTitle("弹出警告框", for: UIControlState())
         
-        //设置按钮字体\大小
+        // 设置按钮字体\大小
         btn.titleLabel?.font = UIFont(name: "System", size: 15)
         
         // 给按钮绑定点击事件

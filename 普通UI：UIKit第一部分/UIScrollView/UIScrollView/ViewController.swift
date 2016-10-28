@@ -49,7 +49,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         for subview: AnyObject in scrollView.subviews {
             
-            if subview.isKind(of: UIImageView) {
+            if subview.isKind(of: UIImageView.self) {
                 
                 return subview as? UIView
             }
@@ -58,12 +58,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return nil
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

@@ -14,18 +14,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        // 1.标签（Label）的创建
+        // MARK:- UILabel的使用
         
-        //创建标签（Label）
+        // MARK:- 1.标签（Label）的创建
+        
+        // 创建标签（Label）
         let label = UILabel(frame: CGRect(x: 20, y: 100, width: 300, height: 100))
         
-        //设置标签显示文字
+        // 设置标签显示文字
         label.text = "The Swift Programming Language ！"
 
         // 添加到视图中
         self.view.addSubview(label)
         
-        // 2.背景颜色、文字颜色的设置
+        // MARK:- 2.背景颜色、文字颜色的设置
         
         // 设置标签文字颜色为白色
         label.textColor = UIColor.white
@@ -33,7 +35,7 @@ class ViewController: UIViewController {
         // 设置标签背景颜色为紫色
         label.backgroundColor = UIColor.purple
         
-        // 3.对齐方式的设置
+        // MARK:- 3.对齐方式的设置
         /*
         可以用textAlignment 属性设置文字的对齐方式。
         属性值可以为：
@@ -44,7 +46,7 @@ class ViewController: UIViewController {
         
         label.textAlignment = NSTextAlignment.center
 
-        // 4.文字阴影的设置
+        // MARK:- 4.文字阴影的设置
         // 文字阴影的颜色用 shadowColor 属性设置，阴影的偏移量可以用属性 shadowOffset 来指定。
         
         // 设置文字阴影颜色为 gray（灰色）
@@ -60,14 +62,14 @@ class ViewController: UIViewController {
         }
 
 
-        // 5.字体的设置
+        // MARK:- 5.字体的设置
         
         // 通过font属性，可以设置文字的字体
         //该属性值为UIfont 对象，如果找不到定义的字体，将会使用系统默认的字体、大小。
         label.font = UIFont(name: "Bodoni 72", size: 20)
       
         
-        // 6.文字的省略方式
+        // MARK:- 6.文字的省略方式
 
         /*
         当标签的文字超过了容器的宽度时，隐藏尾部的文字，并显示省略号.
@@ -85,7 +87,7 @@ class ViewController: UIViewController {
         
         label.lineBreakMode = NSLineBreakMode.byTruncatingMiddle
      
-        // 7.文字的自动调整
+        // MARK:- 7.文字的自动调整
         /*
          
         默认情况下，当文字超出标签的宽度，会被隐藏一部分，如果不想文字被隐藏，希望全部显示出来，
@@ -95,7 +97,7 @@ class ViewController: UIViewController {
         
         label.adjustsFontSizeToFitWidth = true
         
-        // 8.多行字符串
+        // MARK:- 8.多行字符串
         // 默认标签中的文字只会显示一行，如果需要显示多行文字，通过设置 numberOfLines 属性来实现
 
         label.numberOfLines = 2
