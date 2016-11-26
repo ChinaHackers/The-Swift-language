@@ -155,9 +155,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         
     }
+   
     // MARK: - 监听ScrollView事件 代理方法
     
-    //当滚动视图移动时, 只要offset 发生改变,就会调用此函数. 直到停止
+    // MARK: - 当scrollview 是滚动状态时, offset 发生改变,就会调用此函数. 直到停止
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         // 如果切换页面 ,则不执行后面的代码
@@ -174,16 +175,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             
         }
     }
-    // 创建监听滚动视图 的滚动减速事件代理方法, 重置标量的默认值
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
-        
-        usePageControl = false
-
-        
-    }
-    
-    
-    // 减速到停止的时候（静止）的时候调用
+   
+    // MARK: 结束减速时触发（减速到停止）
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let index = Int(scrollView.contentOffset.x / self.view.frame.size.width)    //获取当前页数
@@ -210,33 +203,31 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 
                 }, completion: nil)
         }
-        
+        print("结束减速时触发")
     }
     
-    // 当滚动视图已经停止拖拽时, 调用
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-    }
-    
-    // 将要开始减速的时候 （手指离开屏幕开始调用）//必须要有减速过程
+    //MARK: 开始减速时触发 （手指离开屏幕开始调用）
+    //必须要有减速过程
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        
+        print("开始减速时触发")
     }
     
-    // 当手指移动前的一瞬间, 调用
-    // 将要开始拖拽的时候调用(开始滚动的时候)(手指开始拖拽屏幕的时候)
+    
+    //MARK: 结束拖拽时触发
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print("结束拖拽时触发")
+    }
+    
+    //MARK: 开始拖拽的时候调用 (手指开始拖拽屏幕的时候)
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
+        print("开始拖拽时触发")
     }
     
-    //当点击状态栏 回到顶部的时候调用
-    //首先要设置 _scrollView.scrollsToTop = YES;
+    //MARK: 当点击状态栏 回到顶部的时候调用
+    //首先要设置 _scrollView.scrollsToTop = true;
     func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         return true
     }
-    
-    
-    
     
     //按钮点击事件
     func buttonClick(_ button: UIButton) {
