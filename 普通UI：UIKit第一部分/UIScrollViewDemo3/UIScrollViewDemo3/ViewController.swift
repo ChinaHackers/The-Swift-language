@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
+    // MARK: - 属性
     // 定义3个常量用来表示 4个页面, 页面宽度: 屏幕的宽度, 高度: 屏幕的高度
-    let numOfPages = 4
-    let screenW = UIScreen.main.bounds.width
-    let screenH = UIScreen.main.bounds.height
+    fileprivate let numOfPages = 4
+    fileprivate let screenW = UIScreen.main.bounds.width
+    fileprivate let screenH = UIScreen.main.bounds.height
 
     // 添加控制翻页的属性: 通过 UIPageControl 组件中的小白点, 观察页面的位置
     var pageControl = UIPageControl()
@@ -23,10 +24,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     var scrollView = UIScrollView()
     var btn = UIButton()
-    
-
+  
+    // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //UIScrollView 基本使用
+        UIScrollViewDemo()
+        
+    }
+    
+    
+    // MARK: - UIScrollView 基本使用
+    fileprivate func UIScrollViewDemo() {
         
         //MARK: - UIScrollView (滚动视图)
         
@@ -76,8 +86,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // 设置滚动视图的代理 为当前类 ,来实现捕捉滚动视图的动作
         scrollView.delegate = self
         
-        self.view.addSubview(scrollView)
-     
+        view.addSubview(scrollView)
+        
         // 使用 for in 循环创建 4张图片
         for i in 0..<numOfPages {
             
@@ -118,11 +128,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         // 给页面控制器,添加 监听页面切换 的方法
         pageControl.addTarget(self, action: #selector(ViewController.sliding), for: UIControlEvents.valueChanged)
-
+        
         view.addSubview(pageControl)
     }
+    
+    
+    
     // 监听页面滑动的方法
-    func sliding()  {
+   @objc fileprivate func sliding()  {
         
         // 获取当前页面控制器 当前的页码
         let page = CGFloat(pageControl.currentPage)
@@ -142,7 +155,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         
     }
-    // 监听滚动视图事件 代理方法
+    // MARK: - 监听ScrollView事件 代理方法
+    
+    //当滚动视图移动时, 只要offset 发生改变,就会调用此函数. 直到停止
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         // 如果切换页面 ,则不执行后面的代码
@@ -160,32 +175,34 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     // 创建监听滚动视图 的滚动减速事件代理方法, 重置标量的默认值
-//    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
-//        
-//        usePageControl = false
-//
-//        
-//    }
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+        
+        usePageControl = false
+
+        
+    }
     
     
-    // 滑动结束后调用
+    // 减速到停止的时候（静止）的时候调用
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let index = Int(scrollView.contentOffset.x / self.view.frame.size.width)    //获取当前页数
+        
         pageControl.currentPage = index
+       
         //在这里添加按钮的渐入效果,当页面滑到第4页时出现
         if(index == 3) {
             btn.frame = CGRect(x: 4 * self.view.frame.width, y: self.view.frame.height, width: self.view.frame.width, height: 50)
             btn.setTitle("欢迎来到美女世界!", for: UIControlState())
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
             btn.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
-            btn.backgroundColor = UIColor.orange
+            btn.backgroundColor = UIColor.purple
             btn.alpha = 0
             
             btn.addTarget(self, action: #selector(ViewController.buttonClick(_:)), for: .touchUpInside)
             
             UIView.animate(withDuration: 1.5, delay: 0.5, options: UIViewAnimationOptions(), animations: { () -> Void in
-                self.btn.frame = CGRect(x: 3*self.view.frame.width, y: self.view.frame.height-100, width: self.view.frame.width, height: 50)
+                self.btn.frame = CGRect(x: 3 * self.view.frame.width, y: self.view.frame.height - 100, width: self.view.frame.width, height: 50)
                 self.btn.alpha = 1
                 
                 //注意把按钮添加到scrollView上,不要添加到imageView上,会无法点击
@@ -196,6 +213,31 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    // 当滚动视图已经停止拖拽时, 调用
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+    }
+    
+    // 将要开始减速的时候 （手指离开屏幕开始调用）//必须要有减速过程
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        
+    }
+    
+    // 当手指移动前的一瞬间, 调用
+    // 将要开始拖拽的时候调用(开始滚动的时候)(手指开始拖拽屏幕的时候)
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+    }
+    
+    //当点击状态栏 回到顶部的时候调用
+    //首先要设置 _scrollView.scrollsToTop = YES;
+    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    
+    
+    
+    
     //按钮点击事件
     func buttonClick(_ button: UIButton) {
         //界面的跳转
@@ -204,10 +246,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.present(rootVC, animated: true, completion: nil)
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-
 }
+
+
+// 设置状态栏颜色
+var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+}
+
+
+
