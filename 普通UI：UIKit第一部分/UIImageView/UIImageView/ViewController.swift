@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         
         // 开始播放动画
         image.startAnimating()
+        
        
     }
  

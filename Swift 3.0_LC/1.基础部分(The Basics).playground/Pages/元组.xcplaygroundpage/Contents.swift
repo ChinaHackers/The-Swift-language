@@ -15,16 +15,13 @@ print("x is \(x) and y is \(y)")
 //创建元组2
 let http404Error = (404, "Not Found")   //由一个Int和一个字符串String组成
 print(http404Error)
-
 //:指名`value`的`key`。`statusCode`对应值`404`，`statusMessage`对应值`"Not Found"`
 let (statusCode, statusMessage) = http404Error
 print("The status code is \(statusCode)")         //访问第一个值
 print("The status message is \(statusMessage)")   //访问第二个值
-
 //:如果仅需要元组中的个别值，可以使用(_)来忽略不需要的值
 let (justTheStatusCode, _) = http404Error
 print("The status code is \(justTheStatusCode)")  //仅需要第一个值
-
 //:访问元组 - 序号访问方式，序号从0开始
 print("The status code is \(http404Error.0)")     //访问第一个值
 print("The status message is \(http404Error.1)")  //访问第二个值
@@ -36,6 +33,4 @@ let http200Status = (statusCode: 200, description: "OK")
 // 给元组中的元素命名后，你可以通过名字来获取这些元素的值：
 print("The status code is \(http200Status.statusCode)")
 print("The status message is \(http200Status.description)")
-
-
-//: [Next](@next)
+//: [上一页](@previous) | [下一页](@next)

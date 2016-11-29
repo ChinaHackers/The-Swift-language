@@ -13,8 +13,6 @@
 - 数字 `0`, 字符串 '0' 和 "", 空的 `list()`, 及未定义的变量都为 `false` ，其他的则都为 `true`。
 - `true` 取反使用 `!` 号或 `not`，取反后返回 `false`。
 */
-
-
 //实例
 var index = 10
 while index < 20 {
@@ -32,7 +30,6 @@ while index < 20 {
 //index 的值为 17
 //index 的值为 18
 //index 的值为 19
-
 //: #### repeat...while 循环
 //:     Swift 中的 repeat...while  循环不像 for 和 while 循环在循环体开始执行前先判断条件语句，而是在循环执行结束时判断条件是否符合。
 

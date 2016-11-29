@@ -13,7 +13,6 @@ var anotherInt = 107
 swapTwoInts(&someInt, &anotherInt)
 print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 // 打印 “someInt is now 107, and anotherInt is now 3”
-
 //: `swapTwoInts(_:_:)` 函数挺有用，但是它只能交换 `Int` 值，如果你想要交换两个 `String` 值或者 `Double`值，就不得不写更多的函数，例如 `swapTwoStrings(_:_:)` 和 `swapTwoDoubles(_:_:)`
 func swapTwoStrings(_ a: inout String, _ b: inout String) {
     let temporaryA = a
@@ -32,6 +31,4 @@ func swapTwoDoubles(_ a: inout Double, _ b: inout Double) {
 
 //:>注意: 在上面三个函数中，a 和 b 类型相同。如果 a 和 b 类型不同，那它们俩就不能互换值。Swift 是类型安全的语言，所以它不允许一个 String 类型的变量和一个 Double 类型的变量互换值。试图这样做将导致编译错误。
 
-
 //: [上一页](@previous) | [下一页](@next)
-

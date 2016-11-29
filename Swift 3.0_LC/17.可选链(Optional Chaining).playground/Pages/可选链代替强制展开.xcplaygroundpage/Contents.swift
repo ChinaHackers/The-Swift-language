@@ -1,4 +1,4 @@
-//: ### 可选链代替强制展开
+//: ## 可选链代替强制展开
 //: - 你可以通过在你希望如果可选项为非 `nil` 就调用属性、方法或者脚本的可选值后边使用问号（ ? ）来明确可选链。这和在可选值后放叹号（ ! ）来强制展开它的值非常类似。主要的区别在于可选链会在可选项为 `nil` 时得体地失败，而强制展开则在可选项为 `nil` 时触发运行时错误。
 //: - 为了显示出可选链可以在 `nil` 值上调用，可选链调用的结果一定是一个可选值，就算你查询的属性、方法或者下标返回的是非可选值。你可以使用这个可选项返回值来检查可选链调用是成功（返回的可选项包含值），还是由于链中出现了 `nil` 而导致没有成功（返回的可选值是 `nil` ）。
 //: - 另外，可选链调用的结果与期望的返回值类型相同，只是包装成了可选项。通常返回 `Int` 的属性通过可选链后会返回一个 `Int?` 。
@@ -33,18 +33,15 @@ if let roomCount = john.residence?.numberOfRooms {
  这将会告诉 `Swift` 把可选 `residence` 属性“链接”起来并且取回 `numberOfRooms` 的值，如果 `residence` 存在的话。
 
 由于尝试访问 `numberOfRooms` 有失败的潜在可能，可选链尝试返回一个 `Int?` 类型的值，或者说“可选 `Int` ”。当 `residence` 为 `nil` ，就如同上边的例子，这个可选 `Int` 将也会是 `nil` ，来反映出不能访问 `numberOfRooms` 这个事实。可选 `Int` 通过可选绑定来展开整数并赋值非可选值给 `roomCount` 变量。
-
-注意就算 `numberOfRooms` 是非可选的 `Int` 也是适用的。事实上通过可选链查询就意味着对 `numberOfRooms` 的调用一定会返回 `Int?` 而不是 `Int` 。
 */
+//:> 注意: 就算 `numberOfRooms` 是非可选的 `Int` 也是适用的。事实上通过可选链查询就意味着对 `numberOfRooms` 的调用一定会返回 `Int?` 而不是 `Int` 。
 //你可以赋值一个 Residence 实例给 john.residence ，这样它就不会再有 nil 值：
 john.residence = Residence()
-//: - `john.residence` 现在包含了实际的 `Residence` 实例，而不是 `nil` 。如果你尝试用与之前相同的可选链访问 `numberOfRooms` ，它就会返回一个 `Int?` 包含默认 `numberOfRooms` 值 1 ：
+//: `john.residence` 现在包含了实际的 `Residence` 实例，而不是 `nil` 。如果你尝试用与之前相同的可选链访问 `numberOfRooms` ，它就会返回一个 `Int?` 包含默认 `numberOfRooms` 值 1 ：
 if let roomCount = john.residence?.numberOfRooms {
     print("John's residence has \(roomCount) room(s).")
 } else {
     print("Unable to retrieve the number of rooms.")
 }
 // Prints "John's residence has 1 room(s)."
-
-
-//: [Previous](@previous) | [Next](@next)
+//: [上一页](@previous) | [下一页](@next)

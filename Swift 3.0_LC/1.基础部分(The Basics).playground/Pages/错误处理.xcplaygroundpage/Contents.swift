@@ -21,22 +21,9 @@ do {
     // 有一个错误消息抛出
 }
 
-/*
-//: 下面的栗子演示了如何利用错误处理机制处理不同的错误情况：
- func makeASandwich() throws {
-    // ...
- }
- 
- do {
-    try makeASandwich()
-    eatASandwich()
- } catch Error.OutOfCleanDishes {
-    washDishes()
- } catch Error.MissingIngredients(let ingredients) {
-    buyGroceries(ingredients)
- }
 
-*/
+//: 下面的栗子演示了如何利用错误处理机制处理不同的错误情况：
+/*
 func makeASandwich() throws {
     // ...
 }
@@ -49,6 +36,7 @@ do {
 } catch Error.MissingIngredients(let ingredients) {
     buyGroceries(ingredients)
 }
+ */
 /*:
  
  -  在上面的例子中，在没有干净的盘子或者缺少原料的情况下，方法 `makeASandwich()`  就会抛出一个错误。由于 `makeASandwich()` 的抛出，方法的调用被包裹在了一个 `try` 的表达式中。通过将方法的调用包裹在 `do` 语句中，任何抛出来的错误都会被传递到预先提供的 `catch` 分句中。
@@ -57,5 +45,4 @@ do {
  
  */
 
-
-//: [Next](@next)
+//: [上一页](@previous) | [下一页](@next)

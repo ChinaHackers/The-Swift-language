@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // MARK:- UIimageView 的基本使用
+        //UIimageView 的基本使用
         
         // 创建 UIimageView
         let myimages = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
@@ -58,6 +58,11 @@ class ViewController: UIViewController {
         // 将模糊效果视图类实例放入背景中
         myimages.addSubview(blurView)
         
+        
+        //隐藏状态栏
+        self.prefersStatusBarHidden
+        
+
         // 创建按钮
         let btn = UIButton(frame: CGRect(x: 100, y: 250, width: 100, height: 30))
         btn.setTitle("帅哥,摸我!", for: UIControlState())

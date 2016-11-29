@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ActivityIndicator View/ActivityIndicator View.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UIActivity_&#x5206;&#x4eab;/UIActivity/UIActivity.xcodeproj">
    </FileRef>
    <FileRef

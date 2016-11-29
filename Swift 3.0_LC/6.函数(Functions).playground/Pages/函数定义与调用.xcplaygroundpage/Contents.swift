@@ -21,10 +21,10 @@
  }
  */
 // 以下我们定义了一个函数名为` runoob `的函数，形参的数据类型为` String`，返回值也为` String：`
-func runoob(site: String) -> String {
+func runoob(_ site: String) -> String {
     return site
 }
-print(runoob(site: "www.apple.com"))
+print(runoob("www.apple.com"))
 
 //以上程序执行输出结果为：
 //www.apple.com
@@ -34,10 +34,10 @@ print(runoob(site: "www.apple.com"))
 //: 我们可以通过 函数名 以及 对应类型的参数值 来调用 函数，函数的`参数传递`的顺序必须与`参数列表`相同。
 // 以下我们定义了一个函数名为 `runoob` 的函数，形参 `site` 的数据类型为`String`，之后我们调用函数传递的实参也必须`String`类型，实参传入函数体后，将直接返回，返回的数据类型为`String`。
 
-func runoob1(site: String) -> String {
+func runoob1(_ site: String) -> String {
     return site
 }
-print(runoob(site: "www.apple.com"))
+print(runoob("www.apple.com"))
 
 //以上程序执行输出结果为：
 //www.apple.com

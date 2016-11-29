@@ -4,13 +4,13 @@
 //: - 外部参数名: 用于在函数调用时标注传递给函数的参数.
 //: ---
 //: ### 局部参数名
-func sample(number: Int) {
+func sample(_ number: Int) {
     print(number)
 }
 //以上实例中 number 为局部参数名，只能在函数体内使用。
-sample(number: 1)
-sample(number: 2)
-sample(number: 3)
+sample(1)
+sample(2)
+sample(3)
 //: ---
 //: ### 外部参数名
 //:> 你可以在`局部参数名`前指定`外部参数名`，中间以(空格)分隔，外部参数名用于在函数调用时传递给函数的参数。
@@ -33,12 +33,12 @@ pow(firstArg:5, secondArg:3)
 //: ### 默认参数值（Default Parameter Values）
 //: - 你可以在函数体中为每个参数定义默认值（Deafult Values）。当默认值被定义后，调用这个函数时可以忽略这个参数。
 
-func someFunction(parameterWithDefault: Int = 12) {
+func someFunction(_ parameterWithDefault: Int = 12) {
     // 函数体
     // if no arguments are passed to the function call,
     // parameterWithDefault 值为: 12
 }
-someFunction(parameterWithDefault: 6) // parameterWithDefault 值为: 6
+someFunction(6) // parameterWithDefault 值为: 6
 someFunction() // parameterWithDefault 值为: 12
 
 //:> 注意: 将带有默认值的参数放在函数参数列表的最后。这样可以保证在函数调用时，非默认参数的顺序是一致的，同时使得相同的函数在不同情况下调用时显得更为清晰。
@@ -51,17 +51,17 @@ someFunction() // parameterWithDefault 值为: 12
 //: 可变参数的传入值在函数体中变为此类型的一个数组。
 //: 例如，一个叫做 `numbers` 的 `Double`... 型可变参数，在函数体内可以当做一个叫 numbers 的 [Double] 型的数组常量。
 //下面的这个函数用来计算一组任意长度数字的算术平均数（arithmetic mean）：
-func arithmeticMean(numbers: Double...) -> Double {
+func arithmeticMean(_ numbers: Double...) -> Double {
     var total: Double = 0
     for number in numbers {
         total += number
     }
     return total / Double(numbers.count)
 }
-arithmeticMean(numbers: 1, 2, 3, 4, 5)
+arithmeticMean(1, 2, 3, 4, 5)
 //返回3.0, 这五个数字的算术平均值
 
-arithmeticMean(numbers: 3, 8.25, 18.75)
+arithmeticMean(3, 8.25, 18.75)
 //返回10.0, 这是这三个数的算术平均值
 //:> 注意: 一个函数最多只能有一个可变参数。如果函数有一个或多个带默认值的参数，而且还有一个可变参数，那么把可变参数放在参数表的最后。
 

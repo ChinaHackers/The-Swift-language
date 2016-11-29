@@ -15,8 +15,6 @@
 //: - UTF-8 代码单元集合 (利用字符串的utf8属性进行访问)
 //: - UTF-16 代码单元集合 (利用字符串的utf16属性进行访问)
 //: - 21位的 Unicode 标量值集合，也就是字符串的 UTF-32 编码格式 (利用字符串的unicodeScalars属性进行访问)
-
-
 //下边的每一个栗子都展示了接下来的字符串的不同表示方法，这个字符串由字符 D ， o ， g ， !  ( DOUBLE EXCLAMATION MARK, 或者说 Unicode 标量 U+203C)以及 ? 字符( DOG FACE , 或者说 Unicode 标量 U+1F436)组成：
 
 let dogString = "Dog!🐶"
@@ -45,8 +43,6 @@ print("")
 
 //: ---
 //: #### Unicode 标量表示法
-
-
 //: 你可以通过遍历 `unicodeScalars` 属性来访问 `String` 值的 `Unicode` 标量表示法。这个属性的类型是 `UnicodeScalarView`，它是 `UnicodeScalar` 类型值的合集。
 
 // 每一个 UnicodeScalar都有值属性可以返回一个标量的21位值，用 UInt32值表示：
@@ -56,9 +52,6 @@ for scalar in dogString.unicodeScalars {
 print("")
 
 // 68 111 103 33 128054”
-
-
-
 
 /*:
  前三个UnicodeScalar值(68, 111, 103)的value属性仍然代表字符D、o和g。 第四个codeUnit值(8252)仍然是一个等于十六进制203C的十进制值。

@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - UIScrollView 基本使用
     fileprivate func UIScrollViewDemo() {
         
-        //MARK: - UIScrollView (滚动视图)
+         //MARK: - UIScrollView (滚动视图)
         
         // 初始化 UIScrollView 对象,并设置其位置
         scrollView = UIScrollView(frame: self.view.frame)
@@ -86,6 +86,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // 设置滚动视图的代理 为当前类 ,来实现捕捉滚动视图的动作
         scrollView.delegate = self
         
+        
+        
+        //MARK: - 调整UIScrollView的滑动速度
+        //1.使用系统定义的常量值
+        // UIScrollViewDecelerationRateNormal：正常减速（默认值）
+        // UIScrollViewDecelerationRateFast：快速减速
+        // scrollView.decelerationRate = UIScrollViewDecelerationRateFast
+        
+        // 2.设置自定义值
+        // decelerationRate 类型为 CGFloat，其范围是（0.0，1.0）。上面两个常量对应的值分别是：
+        // UIScrollViewDecelerationRateNormal：0.998（默认值）
+        // UIScrollViewDecelerationRateFast：0.99
+        
+        scrollView.decelerationRate = 0.1
+        
+
         view.addSubview(scrollView)
         
         // 使用 for in 循环创建 4张图片

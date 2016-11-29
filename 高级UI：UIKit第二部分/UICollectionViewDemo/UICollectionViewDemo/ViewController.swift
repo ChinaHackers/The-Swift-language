@@ -25,7 +25,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     /******* 集合视图代理方法 ********/
     
-    // MARK: - UICollectionViewDelegate
+    // MARK: - UICollectionView 代理协议
     
     // 设置集合视图单元格数量
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,15 +75,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         print("点击了图片lxm\((indexPath as NSIndexPath).item+1).JPG")
         
-        
     }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

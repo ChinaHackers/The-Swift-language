@@ -139,5 +139,4 @@ if let definiteString = assumedString {
 
 //: 总结`!`使用场景: 强制对`Optional`值进行解包(`unwrap`), 声明隐式拆包的可选类型`（Implicitly Unwrapped Optionals）`值，一般用于类中的属性
 
-
-//: [Next](@next)
+//: [上一页](@previous) | [下一页](@next)

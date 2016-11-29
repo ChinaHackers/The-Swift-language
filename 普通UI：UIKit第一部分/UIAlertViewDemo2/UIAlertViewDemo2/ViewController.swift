@@ -13,32 +13,40 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //弹出按钮
+        popup_Btn()
+        
+    }
+    
+    // MARK: - 弹出按钮
+    fileprivate func popup_Btn() {
+       
         // 创建一个按钮, 点击按钮时,弹出警告窗口
         let btn = UIButton(type: UIButtonType.system)
         
-        // 设置按钮的位置
+        //设置按钮的位置
         btn.frame = CGRect(x: 120, y: 166, width: 120, height: 30)
         
-        // 设置按钮在正常状态下的标题文字
+        //设置按钮在正常状态下的标题文字
         btn.setTitle("弹出警告框", for: UIControlState())
         
-        // 设置按钮字体\大小
+        //设置按钮字体\大小
         btn.titleLabel?.font = UIFont(name: "System", size: 15)
         
         // 给按钮绑定点击事件
-        btn.addTarget(self, action: #selector(ViewController.showActionSheet), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(showActionSheet), for: .touchUpInside)
         
         // 设置按钮背景色为 橙色
-         btn.backgroundColor = UIColor.orange
+        btn.backgroundColor = UIColor.orange
         
         // 将按钮添加到当前视图控制器的根视图
-        self.view.addSubview(btn)
-  
+        view.addSubview(btn)
+
     }
 
      func showActionSheet() {
         
-        // 警告框 动作表(ActionSheet)
+        // MARK: - 警告框 动作表(ActionSheet)
         
         // 初始化一个警告窗口,并设置窗口的标题文字和提示信息, 同时设置弹出窗口样式为: ActionSheet 动作表样式
         let alert = UIAlertController(title: "提示", message: "警告框用法真的很简单", preferredStyle: .actionSheet)

@@ -74,7 +74,6 @@ switch index {
  
  switch 语句一定得使全面的。就是说，给定类型里每一个值都得被考虑到并且匹配到一个 switch 情况。如果无法提供一个switch情况给所有可能的值，你可以定义一个默认匹配所有的情况来匹配所有未明确出来的值。这个匹配所有的情况用关键字 default 标记，并且必须在所有情况的最后出现。
  */
-
 // 这个示例使用了一个 switch 语句来考虑一个叫做 someCharacter 的单一小写字符：
 let someCharacter: Character = "z"
 switch someCharacter {
@@ -86,8 +85,6 @@ default:
     print("Some other character")
 }
 // Prints "The last letter of the alphabet"
-
-
 /*:
 执行过程：
  - 1.首先计算switch后面“ 表达式 ”的值，然后依次与case后面的“ 常量表达式 ”的值进行比较.如果相同就执行该case后面的语句组，

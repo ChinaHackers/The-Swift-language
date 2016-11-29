@@ -117,15 +117,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK - table view Data scource
     
-    // MARK -  有多少组数据
-    
+    //有多少组数据
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
-    // MARK -  每-组有多少行
-    
+    //每-组有多少行
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // 数组的长度作为表格视图的行数
@@ -134,7 +132,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 
-    // MARK - 每一行显示的具体内容
+    //每一行显示的具体内容
     
     // 初始化或复用表格视图中的单元格
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -258,17 +256,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // 简写:
            // dataArray.removeAtIndex(indexPath.row)
             
-            print("您点击了删除按钮!")
+//            print("您点击了删除按钮!")
+            
+           
+            print("删除了\( dataArray[(indexPath as NSIndexPath).row])")
+            
+//            print("删除了数据\((indexPath as NSIndexPath).row)")
             
         }
         
-        // 然后删除单元格在表格中对应的行
+        // 然后删除单元格在表格中对应的行, 带动画效果
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         
     }
  
  
-    //MARK: -  设置单元格是否允许拖动\换行.
+    //MARK: - 设置单元格是否允许拖动\换行.
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -276,8 +279,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
     //MARK: - 响应单元格的移动事件
     func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
-        
-        
         
         if fromIndexPath != toIndexPath {
         

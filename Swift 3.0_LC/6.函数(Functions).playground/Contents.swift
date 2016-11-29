@@ -250,7 +250,7 @@ vari("Google", "Baidu", "Runoob")
 //一般默认在函数中定义的参数都是常量参数，也就是这个参数你只可以查询使用，不能改变它的值。
 //如果想要声明一个变量参数，可以在前面加上var，这样就可以改变这个参数的值了。
 //例如：
-func  getName(var id:String).........
+func  getName(id:String).........
     
 //    此时这个id值可以在函数中改变。
 //一般默认的参数传递都是传值调用的，而不是传引用。 所以传入的参数在函数内改变，并不影响原来的那个参数。传入的只是这个参数的副本。
@@ -261,8 +261,10 @@ func  getName(var id:String).........
 //实例
 
 
-func swapTwoInts(var a:Int,var b:Int){
+func swapTwoInts(a:Int,b:Int){
     
+    var a = a
+    var b = b
     let t = a
     a = b
     b = t
@@ -280,7 +282,7 @@ print("x = \(x) ;y = \(y)")
 
 //修改方法是使用`inout`关键字：
 
-func swapTwoInts(inout a:Int,inout b:Int){
+func swapTwoInts(a:inout Int,b:inout Int){
     
     let t = a
     a = b

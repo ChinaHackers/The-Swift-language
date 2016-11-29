@@ -10,14 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // 创建进度条
     // 实例化 UIProgressView 类可以创建一个进度条，在实例化时参数 progressViewStyle.Defailt 指定进度条风格为默认风格
     let progressView = UIProgressView(progressViewStyle: UIProgressViewStyle.bar)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK:- 进度条（UIProgressView）
+        // 进度条（UIProgressView）
+        
         progressView.center = self.view.center
+        
         
         // progress 属性可以设置进度条进度，0.5表示 进度为：50%
         // progressView.progress = 0
@@ -47,6 +50,7 @@ class ViewController: UIViewController {
         
     }
 
+    
     func update(_ sender: Timer) {
         
         progressView.progress += 0.1
@@ -57,6 +61,15 @@ class ViewController: UIViewController {
             sender.invalidate()
         }
         
+        
     }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
 }
 

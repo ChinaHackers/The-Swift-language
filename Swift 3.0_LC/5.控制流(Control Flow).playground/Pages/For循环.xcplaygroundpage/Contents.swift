@@ -21,7 +21,6 @@ for index in 1...5 {
  
  - 上面的例子中，`index` 是一个每次循环遍历开始时被自动赋值的常量。这种情况下，`index` 在使用前不需要声明，只需要将它包含在循环的声明中，就可以对其进行隐式声明，而无需使用 `let` 关键字声明。
  */
-
 //如果你不需要知道区间序列内每一项的值，你可以使用下划线（_）替代变量名来忽略对值的访问：
 let base = 3
 let power = 10
@@ -31,7 +30,6 @@ for _ in 1...power {
 }
 print("\(base) to the power of \(power) is \(answer)")
 // 输出 "3 to the power of 10 is 59049"
-
 /*:
  - 这个例子计算 base 这个数的 power 次幂（本例中，是3的10次幂），从1（3的0次幂）开始做3的乘法， 进行10次，
  - 使用1到10的闭区间循环。这个计算并不需要知道每一次循环中计数器具体的值，只需要执行了正确的循环次数即可。
@@ -47,7 +45,6 @@ for name in names {
 // Hello, Alex!
 // Hello, Brian!
 // Hello, Jack!
-
 /*:
  你也可以通过遍历一个字典来访问它的键值对。遍历字典时，字典的每项元素会以(key, value)元组的形式返回，你可以在for-in循环中使用显式的常量名称来解读(key, value)元组。下面的例子中，字典的键（key）解读为常量animalName，字典的值会被解读为常量legCount：
  */
@@ -60,20 +57,19 @@ for (animalName, legCount) in numberOfLegs {
 // spiders have 8 legs
 
 //字典元素的遍历顺序和插入顺序可能不同，字典的内容在内部是无序的，所以遍历元素时不能保证顺序。关于数组和字典，详情参见集合类型。
-
 //: ----
 //: 在Swift2.2开始已经否决了 (`for var index = 0; index < 3; ++index `),传统 `C` 风格的 `for` 循环被干掉了
 /*
  也就是说下面这种写法在 2.2 的版本被 否决 了
  for var i = 1; i <= 10; i++ {
-    print("\(i) SwiftGG awesome")
+    print("\(i)")
  }
  
  */
 
 // 以后要这么写了：
  for i in 1...10 {
-    print("\(i) SwiftGG awesome")
+    print("\(i)")
  }
 
 //如果想要创建一个由大到小的范围，你按照下面的写法编译或许没问题，但运行时会崩溃
@@ -83,7 +79,7 @@ for (animalName, legCount) in numberOfLegs {
 
 //应当这么写：
  for i in (1...10).reversed() {
-    print("\(i) SwiftGG awesome")
+    print("\(i)")
  }
 
 // 另一种选择是使用标准的快速枚举来遍历数组
@@ -93,6 +89,4 @@ for (animalName, legCount) in numberOfLegs {
     
     print("\(number) green bottles")
  }
-
-
 //: [后退](@previous) | [While循环](@next)

@@ -18,7 +18,6 @@ if quotation == sameQuotation {
  例如，LATIN SMALL LETTER E WITH ACUTE(U+00E9)就是标准相等于LATIN SMALL LETTER E(U+0065)后面加上COMBINING ACUTE ACCENT(U+0301)。
  这两个字符群集都是表示字符é的有效方式，所以它们被认为是标准相等的：
  */
-
 // "Voulez-vous un café?" 使用 LATIN SMALL LETTER E WITH ACUTE
 let eAcuteQuestion = "Voulez-vous un caf\u{E9}?"
 
@@ -82,8 +81,6 @@ for scene in romeoAndJuliet {
 }
 print("\(mansionCount) mansion scenes; \(cellCount) cell scenes")
 // 打印输出 "6 mansion scenes; 2 cell scenes"
-
 //:> 注意： `hasPrefix(_:)` 和 `hasSuffix(_:)` 方法都是在每个字符串中逐字符比较其可扩展的字符群集是否标准相等，详细描述在字符串/字符相等。
-
 
 //: [上一页](@previous) | [下一页](@next)

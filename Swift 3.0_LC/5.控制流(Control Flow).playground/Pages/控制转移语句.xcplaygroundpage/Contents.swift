@@ -35,8 +35,7 @@ repeat{
 //index 的值为 20
 
 //: ----
-
-//: #### Break
+//: ### Break
 //: break语句会立刻结束整个控制流的执行。当你想要更早的结束一个switch代码块或者一个循环体时，你都可以使用break语句。
 
 //: 循环语句中的 break:
@@ -66,9 +65,7 @@ var a = 10
 // a 的值为 14
 
 //: ----
-
-//: #### fallthrough
-
+//: ### fallthrough
 /*:
 
 - Swift fallthrough 语句让 case 之后的语句会按顺序继续运行，且不论条件是否满足都会执行。
@@ -77,8 +74,6 @@ var a = 10
 -    如果你想在 Swift 中让 case 之后的语句会按顺序继续运行，则需要使用 fallthrough 语句。
 
 */
-
-//实例
 //以下实例没有使用 fallthrough 语句：
 var index3 = 10
 
@@ -92,15 +87,11 @@ switch index3 {
     default :
         print( "默认 case")
 }
-
-
 // 输出：index3 的值为 10 或 15
 
 
 //用fallthrough关键字
-
 let score1 = 80
-
 switch (score1 / 10) {
     case 9 :
         print("优秀")
@@ -124,8 +115,7 @@ switch (score1 / 10) {
 
 */
 
-//: #### 区间匹配
-
+//: ### 区间匹配
 // case 分支的模式也可以是一个值的区间。下面的例子展示了如何使用区间匹配来输出任意数字对应的自然语言格式：
 
 let approximateCount = 62
@@ -165,7 +155,7 @@ default:
 // 输出 "(1, 1) 在矩形里面"
 //: ----
 
-//: #### 匹配字符串
+//: ### 匹配字符串
 /*
  Monday 星期一
  Tuesday 星期二
@@ -190,6 +180,4 @@ switch weekDay {
 // 输出:
 // 星期一,该上班了
 // 星期五,明天不上班
-
-
 //: [后退](@previous) | [提前退出](@next)

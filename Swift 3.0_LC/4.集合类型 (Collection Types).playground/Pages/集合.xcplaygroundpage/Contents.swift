@@ -61,9 +61,7 @@ var favoriteGenres: Set<String> = ["Rock", "Classical", "Hip hop"]
 //:> 注意：favoriteGenres被声明为一个变量(拥有 `var` 标示符)而不是一个常量(拥有`let`标示符),因为它里面的元素将会在下面的例子中被增加或者移除。
 
 //: 集合类型不能从数组字面量推断出来，所以 Set类型必须被显式地声明。总之，由于 Swift 的类型推断，你不需要在使用包含相同类型值的数组字面量初始化合集的时候写合集的类型。 favoriteGenres2 的初始化可以写的更短一些：
-
 var favoriteGenres2: Set = ["Rock", "Classical", "Hip hop"]
-
 //: 由于数组字面量中所有的值都是相同类型的，Swift 就可以推断 Set<String>是 favoriteGenres变量的正确类型。
 
 //: ---
@@ -87,14 +85,12 @@ if let removedGenre = favoriteGenres.remove("Rock") {
 } else {
     print("I never much cared for that.")   // 打印 "Rock? I'm over it."
 }
-
 //: 使用contains(_:)方法去检查Set中是否包含一个特定的值：
 if favoriteGenres.contains("Funk") {
     print("I get up on the good foot.")
 } else {
     print("It's too funky in here.")        // 打印 "It's too funky in here."
 }
-
 //: ---
 //: #### 遍历集合
 //: 你可以在一个 `for-in` 循环中遍历一个Set中的所有值。
@@ -134,15 +130,13 @@ oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted() // [1, 2, 9]
 
 
 //集合成员关系和相等性
-
-
 // 下面的插图描述了三个集合-a,b和c,以及通过重叠区域表述集合间共享的元素。集合a是集合b的父集合，因为a包含了b中所有的元素，相反的，集合b是集合a的子集合，因为属于b的元素也被a包含。集合b和集合c彼此不关联，因为它们之间没有共同的元素。
 
 //: - 使用“相等”运算符 ( == )来判断两个合集是否包含有相同的值；
-//: - 使用 isSubset(of:) 方法来确定一个合集的所有值是被某合集包含；
-//: - 使用 isSuperset(of:)方法来确定一个合集是否包含某个合集的所有值；
-//: - 使用 isStrictSubset(of:) 或者 isStrictSuperset(of:)方法来确定是个合集是否为某一个合集的子集或者超集，但并不相等；
-//: - 使用 isDisjoint(with:)方法来判断两个合集是否拥有相同的值。
+//: - 使用 `isSubset(of:)` 方法来确定一个合集的所有值是被某合集包含；
+//: - 使用 `isSuperset(of:)`方法来确定一个合集是否包含某个合集的所有值；
+//: - 使用 `isStrictSubset(of:)` 或者 `isStrictSuperset(of:)` 方法来确定是个合集是否为某一个合集的子集或者超集，但并不相等；
+//: - 使用 `isDisjoint(with:)` 方法来判断两个合集是否拥有相同的值。
 let houseAnimals: Set = ["🐶", "🐱"]
 let farmAnimals: Set = ["🐮", "🐔", "🐑", "🐶", "🐱"]
 let cityAnimals: Set = ["🐦", "🐭"]
@@ -153,8 +147,4 @@ farmAnimals.isSuperset(of: houseAnimals)
 // true
 farmAnimals.isDisjoint(with: cityAnimals)
 // true
-
-
-
-
 //: [字典（Dictionaries）](@next)

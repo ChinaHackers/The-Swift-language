@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBAction func show( _ sender: UIButton) {
-        //操作表的使用 ( UIActionSheet )
+        
+        
+        // 3.操作表的使用 ( UIActionSheet )
         
         let actionSheet = UIAlertController(title: "请选择学习语言", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
         
@@ -42,8 +44,22 @@ class ViewController: UIViewController {
         actionSheet.addAction(cancelButton)
         
         self.present(actionSheet, animated: true, completion: nil)
-                
+        
+        
     }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       
+ 
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+    }
+
 
 }
 

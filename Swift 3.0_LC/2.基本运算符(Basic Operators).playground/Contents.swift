@@ -88,7 +88,7 @@
  //浮点数求余数计算
  //不同于C和Objective-C，Swift的余数运算符也能运用于浮点数：
  
- 8 % 2.5 // equals 0.5
+ 8.truncatingRemainder(dividingBy: 2.5) // equals 0.5
 
 
 /*:

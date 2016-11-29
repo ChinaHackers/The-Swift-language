@@ -1,4 +1,10 @@
-//: - 实例方法
+//: ## 方法(Methods)
+//: 方法 是关联了特定类型的函数。类，结构体以及枚举都能定义实例方法，方法封装了给定类型特定的任务和功能。类，结构体和枚举同样可以定义类型方法，这是与类型本身关联的方法。类型方法与 `Objective-C` 中的类方法相似。
+
+//: 事实上在 结构体和枚举中定义方法是 `Swift` 语言与 `C` 语言和 `Objective-C` 的主要区别。在 `Objective-C` 中，类是唯一能定义方法的类型。但是在 `Swift` ，你可以选择无论类，结构体还是方法，它们都拥有强大的灵活性来在你创建的类型中定义方法。
+
+//: ---
+//: ### 实例方法
 //: - 在 Swift 语言中，实例方法是属于某个特定`类`、`结构体`或者`枚举`类型实例的方法。
 //: - 实例方法提供以下方法：
 //: - 可以访问和修改实例属性
@@ -31,32 +37,24 @@ class Counter {
     }
 }
 
-//: - Counter类定义了三个实例方法：
-//: - increment让计数器按一递增；
-//: - incrementBy(amount: Int)让计数器按一个指定的整数值递增；
-//: - reset将计数器重置为0。
-
+//: `Counter` 类定义了三个实例方法：
+//: - `increment` 让计数器按一递增；
+//: - `incrementBy(amount: Int)` 让计数器按一个指定的整数值递增；
+//: - `reset` 将计数器重置为0。
 //Counter这个类还声明了一个可变属性count，用它来保持对当前计数器值的追踪。
 //调用属性一样，用点语法（dot syntax）调用实例方法：
 
 let counter = Counter() // 初始计数值是0
-
 counter.increment()     // 计数值现在是1
-
-counter.incrementBy(5)  // 计数值现在是6
-
+counter.incrementBy(amount: 5)  // 计数值现在是6
 counter.reset()         // 计数值现在是0
 
-
-
-//: - 方法的局部参数名称和外部参数名称
-
-//Swift 函数参数可以同时有一个局部名称（在函数体内部使用）和一个外部名称（在调用函数时使用)
-
-//Swift 中的方法和 Objective-C 中的方法极其相似。像在 Objective-C 中一样，Swift 中方法的名称通常用一个介词指向方法的第一个参数，比如：with，for，by等等。
-//Swift 默认仅给方法的第一个参数名称一个局部参数名称
-//默认同时给第二个和后续的参数名称为全局参数名称
-
+//: ---
+//: ### 方法的局部参数名称和外部参数名称
+//: Swift 函数参数可以同时有一个局部名称（在函数体内部使用）和一个外部名称（在调用函数时使用)
+//: - Swift 中的方法和 Objective-C 中的方法极其相似。像在 Objective-C 中一样，Swift 中方法的名称通常用一个介词指向方法的第一个参数，比如：with，for，by等等。
+//: - Swift 默认仅给方法的第一个参数名称一个局部参数名称
+//: - 默认同时给第二个和后续的参数名称为全局参数名称
 //以下实例中 'no1' 在swift中声明为局部参数名称。'no2' 用于全局的声明并通过外部程序访问。
 class division {
     var count2: Int = 0
@@ -68,18 +66,17 @@ class division {
 
 let counter2 = division()
 
-counter2.incrementBy(1800, no2: 3)
-counter2.incrementBy(1600, no2: 5)
-counter2.incrementBy(11000, no2: 3)
+counter2.incrementBy(no1: 1800, no2: 3)
+counter2.incrementBy(no1: 1600, no2: 5)
+counter2.incrementBy(no1: 11000, no2: 3)
 
 //以上程序执行输出结果为：
 //600
 //320
 //3666
 
-
-//: - 在可变方法中给 self 属性赋值
-//: - 类型的每一个实例都有一个隐含属性叫做 `self`，`self` 完全等同于该实例本身。
+//: ### 在可变方法中给 self 属性赋值
+//: 类型的每一个实例都有一个隐含属性叫做 `self`，`self` 完全等同于该实例本身。
 //你可以在一个实例的实例方法中使用这个隐含的self属性来引用当前实例
 class calculations {
     let a: Int
@@ -98,8 +95,8 @@ class calculations {
     }
     
     func result() {
-        print("结果为: \(tot(20))")
-        print("结果为: \(tot(50))")
+        print("结果为: \(tot(c: 20))")
+        print("结果为: \(tot(c: 50))")
     }
 }
 
@@ -117,6 +114,4 @@ sum.result()
 //结果为: 1480
 //结果为: 1450
 //
-
-
 //:[Next](@next)

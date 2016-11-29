@@ -1,9 +1,9 @@
 //: ## 字典（key : value）
-//: #### 字典的使用
-//: #### 字典：
-//: #### key ----> value
-//: #### 索引 ----> 文字内容
-//: #### 里面存储的东西都是: 键(key) 值(value) 对
+//: - 字典的使用
+//: - 字典：
+//: - key ----> value
+//: - 索引 ----> 文字内容
+//: - 里面存储的东西都是: 键(key) 值(value) 对
 //: ---
 //: #### 创建一个空字典
 //就像数组，你可以用初始化器语法来创建一个空 Dictionary：
@@ -16,19 +16,15 @@ let emptyDictionary2 = Dictionary<String, Float>()
 
 let emptyDictionary3 = [String: Float]()
 print(emptyDictionary2.count)
-
 //: ---
-
 //: #### 访问和修改字典
-
 //:添加、修改
 //查找原来的字典，如果原来的字典包含此key，那么就把原来字典对应的value换成新的value，
 //如果没有找到此key，就添加一对新的值
 
-
 //var airports: Dictionary<String, String> = ["TYO": "Tokyo", "DUB": "Dublin"]
 var airports = ["TYO": "Tokyo", "DUB": "Dublin"]
-print(airports["TYO"])
+print(airports["TYO"]!)
 
 //添加、修改
 airports["LHR"] = "London"
@@ -54,8 +50,6 @@ print("The dictionary of airports contains \(airports.count) items.")
 
 print(airports.startIndex)
 print(airports.endIndex)
-
-
 //:遍历字典
 for (airportCode, airportName) in airports {
     print("\(airportCode): \(airportName)")

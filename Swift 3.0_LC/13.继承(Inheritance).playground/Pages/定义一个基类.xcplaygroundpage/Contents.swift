@@ -1,10 +1,6 @@
-//: - 定义一个基类（Defining a Base Class）
-
-//: - 不继承于其它类的类，称之为基类（base class）。
-
+//: ## 定义一个基类（Defining a Base Class）
+//: 不继承于其它类的类，称之为基类（base class）。
 //:> 注意: Swift 中的类并不是从一个通用的基类继承而来。如果你不为你定义的类指定一个超类的话，这个类就自动成为基类。
-
-
 //定义了一个叫Vehicle的基类
 class Vehicle {
     
@@ -32,6 +28,4 @@ print("Vehicle: \(someVehicle.description)")
 
 //Vehicle类定义了一个通用特性的车辆类，实际上没什么用处。为了让它变得更加有用，需要完善它从而能够描述一个更加具体类型的车辆。
 
-
-
-//: [后退](@previous) | [子类生成](@next)
+//: [上一页](@previous) | [下一页](@next)

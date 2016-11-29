@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,29 +19,71 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-ht-ISa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-ht-ISa">
                                 <rect key="frame" x="20" y="87" width="280" height="291"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="291" id="3XD-pa-htB"/>
+                                </constraints>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="light-down" maximumValueImage="light-up" translatesAutoresizingMaskIntoConstraints="NO" id="NZc-4L-WfT">
-                                <rect key="frame" x="18" y="422" width="284" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改图片的透明度" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLE-HS-YDO">
+                                <rect key="frame" x="20" y="393" width="339" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.22777268919999999" green="0.72729616119999996" blue="0.65647279039999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改图片的模糊程度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FQ-4g-wz0">
+                                <rect key="frame" x="20" y="514" width="339" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.22777268919999999" green="0.72729616119999996" blue="0.65647279039999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="light-down" maximumValueImage="light-up" translatesAutoresizingMaskIntoConstraints="NO" id="meA-iq-9x3" userLabel="SliderTwo">
+                                <rect key="frame" x="30" y="555" width="315" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NAP-6d-H0Q"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeBlur:" destination="BYZ-38-t0r" eventType="valueChanged" id="yjp-5N-c6p"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="light-down" maximumValueImage="light-up" translatesAutoresizingMaskIntoConstraints="NO" id="NZc-4L-WfT" userLabel="SilderOne">
+                                <rect key="frame" x="30" y="435" width="315" height="48"/>
                                 <connections>
                                     <action selector="changeLight:" destination="BYZ-38-t0r" eventType="valueChanged" id="shQ-jS-ON2"/>
                                 </connections>
                             </slider>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fyj-ht-ISa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="67" id="CCX-d0-E3S"/>
+                            <constraint firstItem="GLE-HS-YDO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="D2z-rn-2Nf"/>
+                            <constraint firstItem="meA-iq-9x3" firstAttribute="trailing" secondItem="NZc-4L-WfT" secondAttribute="trailing" id="Ggm-B1-24B"/>
+                            <constraint firstItem="NZc-4L-WfT" firstAttribute="top" secondItem="GLE-HS-YDO" secondAttribute="bottom" constant="21" id="ILb-r0-myH"/>
+                            <constraint firstItem="0FQ-4g-wz0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="N0G-UF-wei"/>
+                            <constraint firstItem="GLE-HS-YDO" firstAttribute="top" secondItem="fyj-ht-ISa" secondAttribute="bottom" constant="15" id="N1B-JN-35z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fyj-ht-ISa" secondAttribute="trailing" constant="59" id="OqA-L1-PnH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NZc-4L-WfT" secondAttribute="trailing" constant="16" id="TlX-74-leo"/>
+                            <constraint firstItem="NZc-4L-WfT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="eWO-LY-hFC"/>
+                            <constraint firstItem="meA-iq-9x3" firstAttribute="top" secondItem="0FQ-4g-wz0" secondAttribute="bottom" constant="20" id="eyh-NA-vWG"/>
+                            <constraint firstItem="fyj-ht-ISa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="mpC-5y-5Qz"/>
+                            <constraint firstItem="0FQ-4g-wz0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="tBm-lg-bJa"/>
+                            <constraint firstItem="GLE-HS-YDO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="tdi-8I-J3v"/>
+                            <constraint firstItem="0FQ-4g-wz0" firstAttribute="top" secondItem="NZc-4L-WfT" secondAttribute="bottom" constant="32" id="uie-Hy-lcM"/>
+                            <constraint firstItem="meA-iq-9x3" firstAttribute="leading" secondItem="NZc-4L-WfT" secondAttribute="leading" id="uuM-Fg-Xa9"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="ChangeBlur_SLider" destination="meA-iq-9x3" id="oOR-op-J5w"/>
                         <outlet property="image" destination="fyj-ht-ISa" id="HWa-ev-fju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469" y="359"/>
+            <point key="canvasLocation" x="468" y="358.4707646176912"/>
         </scene>
     </scenes>
     <resources>

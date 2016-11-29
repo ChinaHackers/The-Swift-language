@@ -7,4 +7,4 @@
 typealias NSInteger = Int
 var max = NSInteger.min
 
-//: [Next](@next)
+//: [上一页](@previous) | [下一页](@next)

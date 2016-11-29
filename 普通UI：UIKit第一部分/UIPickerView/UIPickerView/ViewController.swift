@@ -14,19 +14,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         
-        
-        // MARK:- 选择框（UIPickerView）
-        
+        // 选择框（UIPickerView）
         // 选择框（UIPickerView）可以让用户以滑动的方式选择值
+// 1. 建立选择框
         
-        // 1. 建立选择框
         pickerView = UIPickerView()
         
-        // 设置数据源为当前视图控制器类
+        // 将 dataSource 设置成自己
         pickerView.dataSource = self
         
-        // 设置协议为当前视图控制器类
+        // 将 delegate 设置成自己
         pickerView.delegate = self
         
         //设置选择框的默认值
@@ -50,6 +49,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
 
     // 设置选择框的列数为3，继承于UIPickerViewDataSource 协议
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
 
         return 3
@@ -63,6 +63,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     // 设置选择框各选项的内容，继承于UIPickerViewDelegate 协议
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
         return String (row) + "-" + String (component)

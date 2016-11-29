@@ -17,6 +17,8 @@
  
  为了实现原来我们在创建UIAlertView时创建的按钮效果，我们只需创建这两个动作按钮并将它们添加到控制器上即可。
  //最后，我们只需显示这个对话框视图控制器即可：
+ 
+ 
  */
  
  
@@ -24,23 +26,21 @@ import UIKit
 
 class ViewController: UIViewController, UIActionSheetDelegate {
     
-//    警告框（UIAlertView）
-//    1.警告框的使用 ：用于提醒用户一些警告确认信息。
-    
+    // MARK: - 警告框（UIAlertView）
+    // 警告框的使用 ：用于提醒用户一些警告确认信息。
     @IBAction func btn() {
         
         let alertView = UIAlertController(title: "系统提示", message: "您确认删除这篇文章吗", preferredStyle: UIAlertControllerStyle.alert)
         
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (_) in
-            
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (UIAlertAction) in
+            print("取消")
         }
-     
-        let deleteAction = UIAlertAction(title: "删除", style: UIAlertActionStyle.destructive) { (_) in
-            
+
+        let deleteAction = UIAlertAction(title: "删除", style: UIAlertActionStyle.destructive) { (UIAlertAction) in
+            print("删除")
         }
         
         alertView.addAction(cancelAction)
-
         alertView.addAction(deleteAction)
         
         self.present(alertView, animated: true, completion: nil)
@@ -53,13 +53,6 @@ class ViewController: UIViewController, UIActionSheetDelegate {
   
       
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
-
 
 }
 

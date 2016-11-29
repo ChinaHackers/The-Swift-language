@@ -9,12 +9,12 @@
 
 import UIKit
 
-class UcaiActivity: UIActivity {
+class WeiboActivity: UIActivity {
     
     //分享类型，在UIActivityViewController.completionHandler回调里可以用于判断，一般取当前类名
     override var activityType: UIActivityType? {
         
-        return UIActivityType(rawValue: UcaiActivity.description())
+        return UIActivityType(rawValue: WeiboActivity.description())
     }
     
     //显示在分享框里的名称

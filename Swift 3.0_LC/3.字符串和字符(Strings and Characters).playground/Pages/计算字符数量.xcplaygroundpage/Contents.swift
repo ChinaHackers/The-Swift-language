@@ -1,12 +1,8 @@
 //: ## 计算字符数量 (Counting Characters)
-
 //: 如果想要获得一个字符串中 `Character` 值的数量，可以使用字符串的 `characters` 属性的 `count` 属性
 let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
 print("unusualMenagerie has \(unusualMenagerie.characters.count) characters")
 // 打印输出 "unusualMenagerie has 40 characters"
-
-
-
 //:> 注意: 在 Swift 中，使用 可拓展的字符群集 作为`Character`值来连接或改变字符串时，并不一定会更改字符串的字符数量。
 
 //: 例如，如果你用四个字符的单词 `cafe` 初始化一个新的字符串，然后添加一个COMBINING ACTUE ACCENT(U+0301)作为字符串的结尾。最终这个字符串的字符数量仍然是4，因为第四个字符是é，而不是e：
@@ -34,6 +30,5 @@ print("the number of characters in \(word) is \(word.characters.count)")
  作为佐证，当一个`NSString`的`length`属性被一个`Swift`的`String`值访问时，实际上是调用了`utf16Count`。
  
  */
-
 
 //: [上一页](@previous) | [下一页](@next)

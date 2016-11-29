@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         let items = ["Swift实战入门", UIImage(named:"swift.png")!, URL(fileURLWithPath:"http://ucai.cn")] as [Any]
         
         //新建自定义的分享对象数组
-        let acts = [WeiXinActivity(),UcaiActivity()]
+        let acts = [WeiXinActivity(),WeiboActivity()]
         
         //根据分享内容和自定义的分享按钮调用分享视图
         let actView = UIActivityViewController(activityItems: items, applicationActivities: acts)

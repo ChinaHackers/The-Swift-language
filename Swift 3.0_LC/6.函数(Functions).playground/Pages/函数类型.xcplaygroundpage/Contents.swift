@@ -3,11 +3,11 @@
 //:---
 //: 这个例子中定义了 `inputs` 函数, 这个函数接受两个 `Int` 值， 返回一个`Int`值。
 //: 这个函数的类型是 `(Int, Int) -> Int`，可以解读为“这个函数类型有两个 `Int` 型的参数并返回一个 `Int` 型的值.
-func inputs(no1: Int, no2: Int) -> Int {
+func inputs(_ no1: Int, no2: Int) -> Int {
     return no1/no2
 }
-print(inputs(no1: 20,no2:10))
-print(inputs(no1: 36,no2:6))
+print(inputs(20,no2:10))
+print(inputs(36,no2:6))
 
 //一个没有形式参数和返回值的函数。
 func printHelloWorld() {
@@ -20,7 +20,7 @@ func printHelloWorld() {
 //: ### 使用函数类型
 //: 你可以像使用 Swift 中的其他类型一样使用函数类型。
 //例如，你可以给一个常量或变量定义一个函数类型，并且为变量指定一个相应的函数。
-func sum(a: Int, b: Int) -> Int {
+func sum(_ a: Int, b: Int) -> Int {
     return a + b
 }
 var addition: (Int, Int) -> Int = sum
@@ -54,22 +54,22 @@ printMathResult(sum, 3, 5)      // 输出: 结果: 8
 //: - 下面的这个例子中定义了两个简单函数，分别是 `stepForward` 和 `stepBackward`
 //: - `stepForward` 函数返回一个比输入值大一的值, `stepBackward` 函数返回一个比输入值小一的值。
 //: - 这两个函数的类型都是` (Int) -> Int`
-func stepForward(input: Int) -> Int {
+func stepForward(_ input: Int) -> Int {
     return input + 1
 }
-func stepBackward(input: Int) -> Int {
+func stepBackward(_ input: Int) -> Int {
     return input - 1
 }
 
 //: - 以下 `chooseStepFunction(_:)` 的函数，它的返回类型是` (Int) -> Int `类型的函数。
 //: - chooseStepFunction(_:) 根据布尔值 `backwards` 来返回 `stepForward(_:) `函数或 `stepBackward(_:)` 函数：
-func chooseStepFunction(backwards: Bool) -> (Int) -> Int {
+func chooseStepFunction(_ backwards: Bool) -> (Int) -> Int {
     return backwards ? stepBackward : stepForward
 }
 
 //你现在可以用 chooseStepFunction(_:) 来获得两个函数其中的一个：
 var currentValue = 3
-let moveNearerToZero = chooseStepFunction(backwards: currentValue > 0)
+let moveNearerToZero = chooseStepFunction(currentValue > 0)
 // moveNearerToZero现在指的是stepBackward()函数
 
 //: 上面这个例子中计算出从 `currentValue` 逐渐接近到0是需要向正数走还是向负数走。

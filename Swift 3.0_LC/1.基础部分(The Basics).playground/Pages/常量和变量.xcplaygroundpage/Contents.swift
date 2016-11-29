@@ -2,7 +2,6 @@
 //: #### - 变量的值可以根据需要不断修改，而常量的值是不能够被二次修改
 //: #### - Swift使用var声明变量，let声明常量。
 //: > 类型推导：编译器在编译的时候 通过你提供的初始化值 自动推导出 特定的表达式的类型
-
 //: ---
 //: #### 声明常量和变量
 var currentLoginAttempt = 0             //编译器自动推断其类型为Int
@@ -49,7 +48,6 @@ friendlyWelcome = "Bonjour!"    // friendlyWelcome 现在是 "Bonjour!"
 let languageName = "Swift"
 languageName = "Swift++"  // 报错：不同于变量，常量的值一旦设定, 则不能再改变。
 */
-
 //: ---
 //: #### 输出常量和变量
 //: - 你可以使用 `print(_:separator:terminator:)` 函数来打印当前常量和变量中的值。
@@ -57,7 +55,7 @@ print(friendlyWelcome)      // 输出 "Bonjour!"
 /*:
 
  - `print(_:separator:terminator:) `是一个用来把一个或者多个值用合适的方式输出的全局函数。
- 比如说，在 `Xcode` 中 `print(_:separator:terminator:)` 函数输出的内容会显示在Xcode的 `console` 面板上。
+ 比如说，在 `Xcode` 中 `print(_:separator:terminator:)` 函数输出的内容会显示在`Xcode`的 `console` 面板上。
  
  - `separator` 和 `terminator` 形式参数有默认值，所以你可以在调用这个函数的时候忽略它们。
  默认来说，函数通过在行末尾添加换行符来结束输出。要想输出不带换行符的值，那就传一个空的换行符作为结束.
@@ -68,4 +66,4 @@ print(friendlyWelcome)      // 输出 "Bonjour!"
 print("The current value of friendlyWelcome is \(friendlyWelcome)")
 // 输出 "The current value of friendlyWelcome is Bonjour!"
 
-//: [下一页](@next)
+//: [上一页](@previous) | [下一页](@next)

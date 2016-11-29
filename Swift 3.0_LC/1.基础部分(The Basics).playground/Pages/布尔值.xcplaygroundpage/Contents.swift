@@ -21,12 +21,10 @@ if turnipsAreDelicious {
 
  */
 
-
 //然而，下面的例子是合法的：
 let i = 1
 if i == 1 {         //i == 1的比较结果是Bool类型”
     // 这个例子会编译成功
 }
 
-
-//: [Next](@next)
+//: [上一页](@previous) | [下一页](@next)
