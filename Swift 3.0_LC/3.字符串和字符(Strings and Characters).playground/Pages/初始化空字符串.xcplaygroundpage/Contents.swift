@@ -8,6 +8,8 @@ var anotherEmptyString = String()  // 初始化方法
 //: 您可以通过检查其 `Boolean` 类型的 `isEmpty` 属性来判断该字符串是否为空：
 if emptyString.isEmpty {
     print("Nothing to see here")
+} else {
+    print("no isEmpty!")
 }
 // 打印输出："Nothing to see here"
 

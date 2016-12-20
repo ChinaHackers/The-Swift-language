@@ -11,15 +11,12 @@ import UIKit
 
 /*
  @IBOutlet weak var searchBar: UISearchBar!
+ 
  UISearchBar 控件 的不同部分会触发不同的事件, 这些事件由 UISearchBar 的委托对象处理.
  UISearchBar 的委托对象必须实现 UISearchBarDelegate 协议
- 
- 
- 
  */
 // 遵守 UISearchBarDelegate 使用 代理方法
 class ViewController: UIViewController, UISearchBarDelegate {
-    
     
     // 创建 UIsearchBar
     let searchBar = UISearchBar(frame: CGRect(x: 10, y: 100, width: 290, height: 40))
@@ -28,7 +25,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         
-        // UISearchBar 搜索框
+        UISearchBar_Demo()
+        
+        
+    }
+    
+    // MARK: - UISearchBar 搜索框
+    fileprivate func UISearchBar_Demo() {
         
         // 设置搜索框内默认文本
         // searchBar.text = "疯狂 iOS 讲义"
@@ -47,7 +50,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
          UIBarStyle.Black
          */
         searchBar.barStyle = UIBarStyle.default
-
+        
         // 设置搜索条渲染的颜色
         searchBar.tintColor = UIColor.blue
         
@@ -66,8 +69,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
         //修改搜索条（UISearchBar）中取消按钮的文字、颜色
         
         // 先获取到 searchBar 中的取消按钮，再设置这个按钮的 title 即可
-        let uiButton = searchBar.value(forKey: "cancelButton") as! UIButton
-        uiButton.setTitle("搜索", for: UIControlState())
+        let Button = searchBar.value(forKey: "cancelButton") as! UIButton
+        Button.setTitle("搜索", for: UIControlState())
         
         // showsScopeBar: 系统将会在搜索框下方显示分段条控制器
         searchBar.showsScopeBar = true
@@ -78,13 +81,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
         // 设置代理
         searchBar.delegate = self
         
+        view.addSubview(searchBar)
         
-        self.view.addSubview(searchBar)
-  
+
         
     }
     
-    // touchesBegan: 点击屏幕时,触发该方法
+    // MARK: - touchesBegan: 点击屏幕时,触发该方法
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         // 设置 searchBar 不再是第一响应
@@ -92,20 +95,20 @@ class ViewController: UIViewController, UISearchBarDelegate {
   
     }
     
-    // selectedScopeButtonIndexDidChange: 当用户点击分段条上的分段按钮, 触发该方法
+    // MARK: - selectedScopeButtonIndexDidChange: 当用户点击分段条上的分段按钮, 触发该方法
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         
         print(selectedScope)
         
     }
     
-    // textDidChange: 当搜索框内文本发生改变时,触发该方法
+    // MARK: - textDidChange: 当搜索框内文本发生改变时,触发该方法
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         print(searchText)
     }
     
-    // shouldChangeTextInRange: 监测用户输入的文字
+    // MARK: - shouldChangeTextInRange: 监测用户输入的文字
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         print(text)
@@ -113,7 +116,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         return true
     }
     
-    // searchBarBookmarkButtonClicked: 当用户点击搜索框上的查询(书签)按钮时,触发该方法
+    // MARK: - searchBarBookmarkButtonClicked: 当用户点击搜索框上的查询(书签)按钮时,触发该方法
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
         
         print("点击了书签按钮!!!")
@@ -127,14 +130,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     
-    // 搜索框的文本结束编辑时调用
+    // MARK: - 搜索框的文本结束编辑时调用
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         
-        
-        
+         
     }
     
-    // searchBarShouldBeginEditing: 当点击搜索框进行编辑时,触发该方法
+    // MARK: - searchBarShouldBeginEditing: 当点击搜索框进行编辑时,触发该方法
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         
         // false: searchBar 成为第一响应者  true: searchBar 不成为第一响应者
@@ -142,22 +144,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     
-    // searchBarShouldEndEditing: 当点击搜索框结束编辑时,触发该方法
+    // MARK: - searchBarShouldEndEditing: 当点击搜索框结束编辑时,触发该方法
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         
         // false: searchBar 结束第一响应者 true: searchBar 不会结束第一响应者
         return true
     }
-    
-    
-   
-   
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

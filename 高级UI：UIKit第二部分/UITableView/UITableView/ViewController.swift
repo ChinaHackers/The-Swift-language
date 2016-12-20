@@ -115,15 +115,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     
-    // MARK - table view Data scource
+    // MARK: - table view Data scource
     
-    //有多少组数据
+    // MARK: 设置 UITableView 数据的组数
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
-    //每-组有多少行
+    // MARK: 设置 UITableView 每-组有多少行
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // 数组的长度作为表格视图的行数
@@ -132,16 +132,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 
-    //每一行显示的具体内容
-    
-    // 初始化或复用表格视图中的单元格
+    // MARK: 设置每一行显示的具体内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
+        // 初始化或复用表格视图中的单元格
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)  as! MyTableViewCell
         
+        // [indexPath.row]     : 表示当前是第几行
+        // [indexPath.section] : 表示当前是第几组
         
         //设置单元格内容
-        let item = dataArray[(indexPath as NSIndexPath).row]
+        let item = dataArray[indexPath.row]
+       
         
          // 单元格数据 
         cell.listItem = item
@@ -175,7 +177,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         aw.backgroundColor = UIColor.orange
         cell.selectedBackgroundView = aw
         
-        // MARK: - 开启编辑模式进行多选操作, 即cell  √ 打钩选择
+        // MARK: 开启编辑模式进行多选操作, 即cell  √ 打钩选择
        // table.allowsMultipleSelectionDuringEditing = true
         
         // 设置 textlabel 显示的文本
@@ -188,9 +190,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
  
 
-    // MARK -  UITableView Delegate
+    // MARK: -  UITableView Delegate
     
-    // 处理列表项的选中事件
+    // MARK: 处理列表项的选中事件
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.table.deselectRow(at: indexPath, animated: true)
@@ -206,9 +208,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      */
     
     
-    //MARK: -  设置单元格的编辑模式为 删除模式
+    //MARK: 设置单元格的编辑模式
     //即Cell中显示 (删除按钮) 或 (添加按钮)
-    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         
         //在点击右上角的按钮后，每个Cell中显示的按钮如下
@@ -230,13 +231,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
     }
     
-    // 设置删除按钮文字
+    // MARK: 设置删除按钮文字
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath)
         -> String? {
             return "删除"
     }
     
-    // MARK: -  开启在Cell中滑动删除, 显示删除按钮，必须实现以下方法:
+    // MARK: - 开启在Cell中滑动删除, 显示删除按钮，必须实现以下方法:
     
     // 响应单元格的删除事件：点击当点击delete后执行的删除过程
     // 注意：先除数据源里的数据，删除tableView中对应的行
@@ -248,7 +249,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             
             // 获取待删除的单元格, 在段落中的行数.
-            let rowNum = (indexPath as NSIndexPath).row
+            let rowNum = indexPath.row
             
             // 从数组中将该单元格的内容清除, 以保证 单元格的一致性
             dataArray.remove(at: rowNum)
@@ -256,12 +257,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // 简写:
            // dataArray.removeAtIndex(indexPath.row)
             
-//            print("您点击了删除按钮!")
-            
-           
-            print("删除了\( dataArray[(indexPath as NSIndexPath).row])")
-            
-//            print("删除了数据\((indexPath as NSIndexPath).row)")
+            print("删除了\( dataArray[indexPath.row])")
             
         }
         
@@ -371,14 +367,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //取消键盘监听通知
         NotificationCenter.default.removeObserver(self)
     }
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-    }
-
 
 }
 

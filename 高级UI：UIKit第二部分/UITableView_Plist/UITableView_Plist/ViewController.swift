@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //初始化数据，这一次数据，我们放在属性列表文件里
+        // MARK: - 加载 plist 文件
         //读取plist文件路径, 将plist内容放到 Array 中
         Controller_Names = NSArray(contentsOfFile: Bundle.main.path(forResource: "Property", ofType: "plist")!) as? Array
         
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 设置表头\表尾标签
         setup_Header_And_Tail_Label()
         
-        view.addSubview(table)
+        //view.addSubview(table)
         
         
     }
@@ -91,6 +91,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
+        // [indexPath.row]     : 表示当前是第几行
+        // [indexPath.section] : 表示当前是第几组
+        
         // 设置 cell 显示的文本
         cell.textLabel?.text = Controller_Names?[indexPath.row]
 
@@ -98,6 +101,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      
     }
  
+    
+    
     // MARK: - UITableView Delegate
     // MARK: 处理列表项的选中事件
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

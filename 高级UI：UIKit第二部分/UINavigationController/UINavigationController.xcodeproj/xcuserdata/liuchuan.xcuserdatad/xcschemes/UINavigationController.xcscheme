@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B9C02521D1C56F300D8F816"
+               BlueprintIdentifier = "6B5A6BDB1DF9A164005C79D4"
                BuildableName = "UINavigationController.app"
                BlueprintName = "UINavigationController"
                ReferencedContainer = "container:UINavigationController.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B9C02521D1C56F300D8F816"
+            BlueprintIdentifier = "6B5A6BDB1DF9A164005C79D4"
             BuildableName = "UINavigationController.app"
             BlueprintName = "UINavigationController"
             ReferencedContainer = "container:UINavigationController.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B9C02521D1C56F300D8F816"
+            BlueprintIdentifier = "6B5A6BDB1DF9A164005C79D4"
             BuildableName = "UINavigationController.app"
             BlueprintName = "UINavigationController"
             ReferencedContainer = "container:UINavigationController.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B9C02521D1C56F300D8F816"
+            BlueprintIdentifier = "6B5A6BDB1DF9A164005C79D4"
             BuildableName = "UINavigationController.app"
             BlueprintName = "UINavigationController"
             ReferencedContainer = "container:UINavigationController.xcodeproj">

@@ -9,7 +9,6 @@ import UIKit
 let possibleNumber = "123"
 let convertedNumber = Int(possibleNumber)
 // convertedNumber 被推测为类型 "Int?"， 或者类型 "optional Int"
-
 //: 因为这个初始化器可能会失败，所以他会返回一个`可选的 Int` ，而不是 `Int` 。`可选的 Int` 写做 `Int? `，而不是 `Int` 。问号明确了它储存的值是一个可选项，意思就是说它可能包含某些 `Int`值，或者可能根本不包含值。（他不能包含其他的值，例如 `Bool` 值或者 `String` 值。它要么是 `Int` 要么什么都没有。）
 
 //: ---

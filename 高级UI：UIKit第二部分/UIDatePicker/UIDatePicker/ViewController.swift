@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        // 日期选择器（UIDatePicker）
+        // MARK: - 日期选择器（UIDatePicker）
         
         // 1.UIDatePicker 控件介绍 用于选择日期\时间
         //用于测试 UIDatePicker 的属性取值
@@ -44,7 +44,6 @@ class ViewController: UIViewController {
         let message = "您选择的日期和时间是: \(datestr)"
         
         // 创建一个UIAlertController对象（警告框），并通过该警告框显示用户选择的日期、时间
-        
         let alertView = UIAlertController(title: "当前日期和时间", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         let OKAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.cancel, handler: nil)
@@ -54,13 +53,5 @@ class ViewController: UIViewController {
         self.present(alertView, animated: true, completion: nil)
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    @IBOutlet weak var searchBar: UISearchBar!
     
- 
 }

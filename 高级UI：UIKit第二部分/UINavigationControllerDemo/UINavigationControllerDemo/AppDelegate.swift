@@ -17,16 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         
-        // 创建程序的入口
+        // MARK: - 创建程序的入口
         // 实例化第一个视图控制器对象
         let First = FirstViewController()
+        
+        
+        
+        // 设置 UINavigationItem 返回按钮标题
+        let item = UIBarButtonItem(title: "返回", style: .plain, target: self, action: nil)
+        
+        First.navigationItem.backBarButtonItem? = item
+        
+
         
         // 初始化导航视图控制器对象, 并将第一个视图控制器 作为导航根视图控制器
         let nav = UINavigationController(rootViewController: First)
         
         // 将导航视图控制器对象,添加至当前窗口根视图.
         self.window?.rootViewController = nav
-       
+
         return true
     }
 

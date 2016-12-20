@@ -15,11 +15,11 @@ let emptyArray3: Array<String> = []
 //Demo2:
 var shoppingList = ["芒果", "橘子", "水", "葡萄", "香蕉"]
 //:增加
-shoppingList.append("苹果")  //append：在原有数组的末尾增加一个元素，方法1
-shoppingList.insert("苹果", at: 2) // 在数组的下标为2的位置插入“苹果”， 方法2
+shoppingList.append("苹果")               //append：在原有数组的末尾增加一个元素，方法1
+shoppingList.insert("苹果", at: 2)        // 在数组的下标为2的位置插入“苹果”， 方法2
 
-shoppingList += ["柚子"]   //shoppingList += "柚子" //方法3
-shoppingList += ["西瓜", "木瓜"]  //方法4
+shoppingList += ["柚子"]                  //shoppingList += "柚子" //方法3
+shoppingList += ["西瓜", "木瓜"]           //方法4
 //:常用方法
 print(shoppingList.count)     //数组的个数
 print(shoppingList.capacity)  //数组的容量, 值为大于count的 最小的2的n次方的数, 比如2、4、8、16
@@ -60,13 +60,11 @@ someInts.append(3)
 // someInts 现在包含一个 Int 值
 someInts = []
 // someInts 现在是空数组，但是仍然是 [Int] 类型的。
-
 //: ---
 //: #### 使用默认值创建数组
 //: Swift 的 Array类型提供了初始化器来创建确定大小且元素都设定为相同默认值的数组。你可以传给初始化器对应类型的默认值（叫做 `repeating`）和新数组元素的数量（叫做 `count`）：
 // threeDoubles 类型是[Double]，等价于 [0.0, 0.0, 0.0]
 var threeDoubles = Array(repeating: 0.0, count: 3)
-
 //: #### 通过连接两个数组来创建数组
 //: 你可以通过把两个兼容类型的现存数组用加运算符（ +）加在一起来创建一个新数组。新数组的类型将从你相加的数组里推断出来：
 // anotherThreeDoubles 被推断为 [Double]，等价于 [2.5, 2.5, 2.5]

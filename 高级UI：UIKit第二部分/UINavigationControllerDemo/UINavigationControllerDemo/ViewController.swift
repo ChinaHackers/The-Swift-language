@@ -12,12 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+//        // 设置 UINavigationItem 返回按钮标题
+//        let item = UIBarButtonItem(title: "返回", style: .plain, target: self, action: nil)
+//        
+//        navigationItem.backBarButtonItem? = item
+//        
+        
     }
 
 

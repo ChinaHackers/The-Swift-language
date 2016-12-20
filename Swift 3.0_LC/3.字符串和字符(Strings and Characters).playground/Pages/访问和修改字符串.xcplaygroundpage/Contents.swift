@@ -16,9 +16,14 @@
 //你可以使用下标语法来访问String特定索引的Character。
 let greeting = "Guten Tag!"
 greeting[greeting.startIndex]  // G
+
+//使用 endIndex 属性可以获取最后一个Character 的后一个位置的索引。
 greeting[greeting.index(before: greeting.endIndex)]   // !
+
 greeting[greeting.index(after: greeting.startIndex)]    // u
 
+//要访问给定索引更远的索引，你可以使用index(_:offsetBy:) 方法而不是多次调用这两个方法。
+// 初始位置偏移7
 let index = greeting.index(greeting.startIndex, offsetBy: 7)
 greeting[index]     // a
 

@@ -11,28 +11,36 @@ import UIKit
 // 遵守 UITabBar 代理协议
 class ViewController: UIViewController, UITabBarDelegate {
     
-    // 添加 Tab Bar 控件
-    var tabBar: UITabBar!
-    // Tab Bar item 的名称
+    // 添加 TabBar 控件
+//    var tabBar: UITabBar!
+    
+    // TabBar item 的名称
     var tabs = ["iOS", "Swift", "HTML", "Java"]
-    // Tab Bar 上方的视图
+    
+    // TabBar 上方的视图
     var contentView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // UITabBarController (标签控件)
-        // 创建 TabBar
-        // TabBar 默认高度: 44\ 48
-        tabBar = UITabBar(frame: CGRect(x: 0, y: self.view.bounds.height - 48, width: self.view.bounds.width, height: 48))
+        // MARK: - (标签控件)
+        TabBar_Demo()
+
+    }
+    
+    // MARK: - UITabBarController (标签控件)
+    fileprivate func TabBar_Demo() {
         
-        // 设置 tabBar 的颜色
-        tabBar.tintColor = UIColor.orange()
+        // TabBar 默认高度: 44\ 48
+       let tabBar = UITabBar(frame: CGRect(x: 0, y: view.bounds.height - 48, width: view.bounds.width, height: 48))
+        
+        // 设置标签条的按钮颜色
+        tabBar.tintColor = UIColor.orange
         
         var items = [UITabBarItem]()
         
         for tab in self.tabs {
-        
+            
             let tabItem = UITabBarItem()
             
             // 设置 tabItem 的标题
@@ -58,21 +66,16 @@ class ViewController: UIViewController, UITabBarDelegate {
         // 设置 UITabBar 代理协议为当前视图控制器类
         tabBar.delegate = self
         
+        
         // 添加 tabBar 当视图上
-        self.view.addSubview(tabBar)
+        view.addSubview(tabBar)
         
         // TabBar上方的视图
         contentView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height-48))
+        contentView.backgroundColor = UIColor.red
         
-        contentView.backgroundColor = UIColor.blue()
-        
-        self.view.addSubview(contentView)
-
+        view.addSubview(contentView)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
 }
 

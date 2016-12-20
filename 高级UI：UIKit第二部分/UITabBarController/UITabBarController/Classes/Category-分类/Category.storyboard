@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fBf-Ox-RCb">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--分类-->
+        <scene sceneID="3kx-iS-oah">
+            <objects>
+                <viewController id="fBf-Ox-RCb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="osu-1Z-oQB"/>
+                        <viewControllerLayoutGuide type="bottom" id="460-kF-poe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BX4-7Q-CHd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="分类" image="home_tab_saunter_btn" selectedImage="home_tab_saunter_selected_btn" id="kOS-Ly-yqc"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QkB-1a-QBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-254" y="-862"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home_tab_saunter_btn" width="63" height="49"/>
+        <image name="home_tab_saunter_selected_btn" width="63" height="49"/>
+    </resources>
+</document>

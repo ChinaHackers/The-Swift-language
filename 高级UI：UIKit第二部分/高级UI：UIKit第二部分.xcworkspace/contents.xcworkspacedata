@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:UITableView_Group/UITableView_Group.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UITabBarControllerDemo/UITabBarControllerDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIPageControl/UIPageControl.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UITabBarController/UITabBarController.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ActivityIndicator View/ActivityIndicator View.xcodeproj">
    </FileRef>
    <FileRef

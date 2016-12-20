@@ -10,5 +10,4 @@ let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
 
 //:> 注意：插值字符串中写在括号中的表达式不能包含非转义反斜杠 (\)，并且不能包含回车或换行符。不过，插值字符串可以包含其他字面量。
  
-
 //: [上一页](@previous) | [下一页](@next)

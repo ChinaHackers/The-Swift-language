@@ -19,7 +19,7 @@
  */
 //下文例子采用空合并运算符,实现了在默认颜色名和可选自定义颜色名之间抉择:
 let defaultColorName = "red"
-var userDefinedColorName:String?    //默认值为nil
+var userDefinedColorName: String?    //默认值为nil
 var colorNameToUse = userDefinedColorName ?? defaultColorName
 //:userDefinedColorName的值为空 ,所以colorNameToUse的值为`red`
 

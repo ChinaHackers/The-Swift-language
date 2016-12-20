@@ -22,7 +22,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // 通过 storyboard 创建控件
     @IBOutlet weak var searchBar: UISearchBar!
-
     @IBOutlet weak var table: UITableView!
     
     
@@ -39,25 +38,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         
         // 加载全部内容
-        self.searchData = self.language
-        
+        searchData = language
         
         // 注册 TableViewCell
-        self.table.register(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
         
         
     }
     
     
     
-    // 设置返回表格行数 ,返回的就是 language 存储的数量
+    // MARK: - 返回表格行数 ,返回的就是 language 存储的数量
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.searchData.count
+        return searchData.count
         
     }
     
-    // 设置每组显示的内容 (创建参数indexPath指定的单元)
+    // MARK: - 每组显示的内容 (创建参数indexPath指定的单元)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let identify = "SwiftCell"
@@ -71,8 +69,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    // UISearchBarDelegate 搜索代理方法. 每次改变搜搜内容时调用
-    
+    // MARK: - UISearchBarDelegate 搜索代理方法. 
+    //每次改变搜搜内容时调用
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         // 没有搜索时,显示全部内容
@@ -85,9 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             for lang in self.language {
                 
-                
                 if lang.lowercased().hasPrefix(searchText) {
-                    
                     
                     self.searchData.append(lang)
                 }
@@ -96,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         // 刷新 TableView 显示
-        self.table.reloadData()
+        table.reloadData()
         
     }
     
@@ -106,13 +102,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // 设置 searchBar 不再是第一响应
         searchBar.resignFirstResponder()
     }
- 
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

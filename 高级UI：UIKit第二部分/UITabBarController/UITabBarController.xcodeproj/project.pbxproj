@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B47D4F11E07A947008D343A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B47D4F01E07A947008D343A /* Home.storyboard */; };
+		6B47D4F31E07A968008D343A /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B47D4F21E07A968008D343A /* Category.storyboard */; };
+		6B47D4F51E07A997008D343A /* Brand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B47D4F41E07A997008D343A /* Brand.storyboard */; };
+		6B47D4F81E07A9AF008D343A /* Integral.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B47D4F61E07A9AF008D343A /* Integral.storyboard */; };
+		6B47D51F1E07E45D008D343A /* My Center.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B47D51E1E07E45D008D343A /* My Center.storyboard */; };
 		6B84549E1D3A4DFD00581911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84549D1D3A4DFD00581911 /* AppDelegate.swift */; };
 		6B8454A01D3A4DFD00581911 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84549F1D3A4DFD00581911 /* ViewController.swift */; };
 		6B8454A31D3A4DFD00581911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8454A11D3A4DFD00581911 /* Main.storyboard */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B47D4F01E07A947008D343A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		6B47D4F21E07A968008D343A /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		6B47D4F41E07A997008D343A /* Brand.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Brand.storyboard; sourceTree = "<group>"; };
+		6B47D4F71E07A9AF008D343A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Integral.storyboard; sourceTree = "<group>"; };
+		6B47D51E1E07E45D008D343A /* My Center.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "My Center.storyboard"; sourceTree = "<group>"; };
 		6B84549A1D3A4DFD00581911 /* UITabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B84549D1D3A4DFD00581911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B84549F1D3A4DFD00581911 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +45,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B47D4EA1E07A90B008D343A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6B47D4ED1E07A90B008D343A /* Home-首页 */,
+				6B47D4EB1E07A90B008D343A /* Brand-品牌 */,
+				6B47D4EC1E07A90B008D343A /* Category-分类 */,
+				6B47D4EE1E07A90B008D343A /* Integral-积分商城 */,
+				6B47D4EF1E07A90B008D343A /* My Center- 个人中心 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6B47D4EB1E07A90B008D343A /* Brand-品牌 */ = {
+			isa = PBXGroup;
+			children = (
+				6B47D4F41E07A997008D343A /* Brand.storyboard */,
+			);
+			path = "Brand-品牌";
+			sourceTree = "<group>";
+		};
+		6B47D4EC1E07A90B008D343A /* Category-分类 */ = {
+			isa = PBXGroup;
+			children = (
+				6B47D4F21E07A968008D343A /* Category.storyboard */,
+			);
+			path = "Category-分类";
+			sourceTree = "<group>";
+		};
+		6B47D4ED1E07A90B008D343A /* Home-首页 */ = {
+			isa = PBXGroup;
+			children = (
+				6B47D4F01E07A947008D343A /* Home.storyboard */,
+			);
+			path = "Home-首页";
+			sourceTree = "<group>";
+		};
+		6B47D4EE1E07A90B008D343A /* Integral-积分商城 */ = {
+			isa = PBXGroup;
+			children = (
+				6B47D4F61E07A9AF008D343A /* Integral.storyboard */,
+			);
+			path = "Integral-积分商城";
+			sourceTree = "<group>";
+		};
+		6B47D4EF1E07A90B008D343A /* My Center- 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				6B47D51E1E07E45D008D343A /* My Center.storyboard */,
+			);
+			path = "My Center- 个人中心";
+			sourceTree = "<group>";
+		};
 		6B8454911D3A4DFC00581911 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +116,7 @@
 		6B84549C1D3A4DFD00581911 /* UITabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				6B47D4EA1E07A90B008D343A /* Classes */,
 				6B84549D1D3A4DFD00581911 /* AppDelegate.swift */,
 				6B84549F1D3A4DFD00581911 /* ViewController.swift */,
 				6B8454A11D3A4DFD00581911 /* Main.storyboard */,
@@ -91,7 +154,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = LC;
 				TargetAttributes = {
 					6B8454991D3A4DFD00581911 = {
@@ -123,9 +186,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B47D4F31E07A968008D343A /* Category.storyboard in Resources */,
+				6B47D51F1E07E45D008D343A /* My Center.storyboard in Resources */,
 				6B8454A81D3A4DFD00581911 /* LaunchScreen.storyboard in Resources */,
 				6B8454A51D3A4DFD00581911 /* Assets.xcassets in Resources */,
 				6B8454A31D3A4DFD00581911 /* Main.storyboard in Resources */,
+				6B47D4F81E07A9AF008D343A /* Integral.storyboard in Resources */,
+				6B47D4F51E07A997008D343A /* Brand.storyboard in Resources */,
+				6B47D4F11E07A947008D343A /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +212,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		6B47D4F61E07A9AF008D343A /* Integral.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B47D4F71E07A9AF008D343A /* Base */,
+			);
+			name = Integral.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		6B8454A11D3A4DFD00581911 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -178,8 +255,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -225,8 +304,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

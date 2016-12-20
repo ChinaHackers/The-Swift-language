@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(self.allnames)
 
         adHeaders = [
-            "常见 UIKit 控件",
+            "普通 UIKit 控件",
             "高级 UIKit 控件"]
         
         
@@ -121,11 +121,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
         //为了提供表格显示性能，已创建完成的单元需重复使用
         let identify = "SwiftCell"
-        let secno = indexPath.section        // indexpath.section : 代表单元格(cell)的第几个分区
-        let data = self.allnames[secno]
         
+        let data = allnames[indexPath.section]
+        
+        // indexpath.section : 代表单元格(cell)的第几个分区
         // 如果分区数为0, 返回 cell
-        if(secno == 0) {
+        if(indexPath.section == 0) {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: identify, for: indexPath)
             cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
@@ -255,31 +256,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 如果编辑模式为删除
         if editingStyle == UITableViewCellEditingStyle.delete {
             
+            allnames[indexPath.section]?.remove(at: indexPath.row)
             
-            // dbhelper.deleteConversationBySay(conlist[indexPath.row].say)            
-            // conlist.removeAtIndex(indexPath.row)
-            
-            // 获取待删除的单元格, 在段落中的行数.
-//            let rowNum = indexPath.row
-//           let rowNum = allnames[indexPath.section]?[indexPath.row]
-//            
-//            let rowNum = self.allnames[(indexPath as NSIndexPath).section]![(indexPath as NSIndexPath).row]
-//            
-//            // 从数组中将该单元格的内容清除, 以保证 单元格的一致性
-//            allnames.removeAtIndex(rowNum)
-//            
-//            let key = Array(allnames.keys)
-//            let airportNames = Array(allnames.values)
-//            
-////            allnames.removeValue(forKey: )
-//            
-
+            tableView.reloadData()
+           
+            // tableView.setEditing(true, animated: true)
             print("你点击了删除按钮!")
             
+            //再删除tableView中对应的行 , 具有动画效果
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.top)
         }
-        //再删除tableView中对应的行 , 具有动画效果
-        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        
+        else if(editingStyle == UITableViewCellEditingStyle.insert) {
+            allnames[indexPath.section]?.insert("这是插入的新数据", at: indexPath.row)
+            print("你按下了插入按钮")
+            tableView.reloadData()
+        }
     }
     
     //MARK: -  在编辑状态，可以拖动设置cell位置
@@ -323,7 +314,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     
     
-//    //MARK: - 移动cell事件
+////    //MARK: - 移动cell事件
 //    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
 //        
 //        if fromIndexPath != toIndexPath {
@@ -347,8 +338,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            }
 //        }
 //    }
-
- 
+//
+// 
 
 }
 
